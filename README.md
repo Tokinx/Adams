@@ -1,4 +1,4 @@
 # Adams
 WordPress theme
 
-![](https://ws4.sinaimg.cn/large/006tKfTcgy1fgrd8qyvwzj31950rrgoj.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fgrd9wym5xj31950qwacw.jpg)
