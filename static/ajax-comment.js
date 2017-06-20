@@ -8,7 +8,7 @@
                 $('.infos').removeClass('donate-close');
                 $('.infos').toggleClass('share-close');
                 if($(this).find('img').length == 0){
-                    $(this).append('<img src="' + $(this).find('a').data('qrcode') + '" /> <i>移动设备上继续阅读</i>');
+                    $(this).append('<div class="qrcode"><img src="' + $(this).find('a').data('qrcode') + '" /> <i>移动设备上继续阅读</i></div>');
                 }
             }
         });

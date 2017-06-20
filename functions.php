@@ -27,7 +27,7 @@ add_shortcode('dl', 'biji_sc_download');
  */
 function biji_enqueue_scripts() {
     wp_enqueue_script(
-        'jquery',
+        'jquery-min',
         '//cdn.staticfile.org/jquery/3.1.1/jquery.min.js',
         array(),
         THEME_DB_VERSION

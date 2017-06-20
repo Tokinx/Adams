@@ -1,5 +1,7 @@
 <section class="alink">
     <div class="container">
+        <a href="https://sb.sb/" title="烧饼博客" target="_blank">烧饼博客</a>
+        <a href="https://saki.ssl.do/aff.php?aff=106" title="SSL 证书购买" target="_blank">SSL证书</a>
         <a target="_blank" href="http://www.isweetnight.com/ ">sweetnight床垫怎么样</a>
         <a target="_blank" href="http://www.ilangzi.com/">朗姿官网</a>
         <a target="_blank" href="http://www.imengjie.com/">梦洁家纺旗舰店</a>
@@ -47,7 +49,7 @@
                 prettyPrint();
             }
         });
-    })(jQuery);
+})(jQuery);
 <?php if(!get_theme_mod('biji_setting_pjax')){ ?>
     InstantClick.on('change', function(isInitialLoad) {
         jQuery.adamsOverload();
@@ -60,8 +62,6 @@
             if (typeof _hmt !== 'undefined') _hmt.push(['_trackPageview', location.pathname + location.search]);
             // support google analytics
             if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
-            // support 多说评论框
-            if (typeof DUOSHUO !== 'undefined') DUOSHUO.EmbedThread($('.ds-thread')[0]);
         }
     });
     InstantClick.on('wait', function() {
