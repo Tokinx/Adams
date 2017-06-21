@@ -1,0 +1,22 @@
+a,.archives tr a, ul.link-items li a, .readerswall li a {color: #b38a60;}
+a:hover,.archives tr a:hover, ul.link-items li a:hover, .readerswall li a:hover { color: #704214;}
+body,.post-list .meta header h2,.infos.fixed .fixed-title{background:#f3eacb;color: #704214;}
+::-webkit-scrollbar-track-piece,.post-list .reade_more a,{background-color:#f3eacb;}
+::-webkit-scrollbar-thumb{background:#704214;border:2px solid #f3eacb}
+.header:after,.alink hr{background:#eae0be;}
+.header h1,.current-menu-item a,.current_page_item a,.current-menu-parent a,.current-post-parent a{color:#704214;background:#f3eacb;}
+.header .menu li:after,.footer .menu li:after{background:#a98c51}
+.infos{background:#f3eacb;border-bottom:1px solid #eae0be;}
+.infos.fixed {box-shadow:0 2px 3px rgba(169, 140, 81, 0.1)}
+.alink{border-top:1px solid #eae0be;}
+.post-list .meta header h2:hover{color:#361e07;}
+.post-list .reade_more a:hover{background:#704214;text-decoration:none;}
+.comment .comment{border-left:1px solid #a98c51;}
+.post_article ol, .post_article ul{background:#eae0be;}
+.post-list .meta footer span,.comment-meta a,.comment-author span,.infos,.infos a{color:#a98c51}
+.comment .comment-author .avatar,.comment .comment-author:before,#commentform input,#commentform textarea,#commentform input#submit:focus{background:#f3eacb;border:1px solid #a98c51;color:#a98c51}
+#commentform textarea:focus,#commentform input:focus,#commentform input#submit:hover {border-color: #704214;}
+#commentform input#submit:hover{background:#704214;}
+.nearbypost{box-shadow:0 1px 0 #a98c51,0 -1px 0 #a98c51;}
+.nearbypost div.alignright {box-shadow:-1px 0 0 #a98c51;}
+.archives table, .archives tr, .archives td{color:#704214}

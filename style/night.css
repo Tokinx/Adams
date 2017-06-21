@@ -1,0 +1,22 @@
+.post_article ol,.post_article ul,blockquote, q,code {background:rgba(255,255,255,.06);box-shadow:0 0 0 1px rgba(255,255,255,.1);}
+a,.archives tr a, ul.link-items li a, .readerswall li a {color: #666e8e;}
+a:hover,.archives tr a:hover, ul.link-items li a:hover, .readerswall li a:hover { color: #bdcadb;}
+body,.post-list .meta header h2,.infos.fixed .fixed-title{background:#1c1f2b;color: #bdcadb;}
+::-webkit-scrollbar-track-piece{background-color:#1c1f2b;}
+::-webkit-scrollbar-thumb{background:#bdcadb;border:2px solid #1c1f2b}
+.header:after,.header .menu li:after,.footer .menu li:after,.alink hr{background:#393f56;}
+.header h1,.current-menu-item a,.current_page_item a,.current-menu-parent a,.current-post-parent a{color:#bdcadb;background:#1c1f2b;}
+.infos{border-bottom:1px solid #393f56;background:#1c1f2b;}
+.infos.fixed {box-shadow:0 2px 3px rgba(0, 0, 0, 0.2)}
+.alink{border-top:1px solid #393f56;}
+.post-list .meta header h2:hover{color:#fff;}
+.post-list .reade_more a,.post-list .reade_more a:hover{background:#666e8e;color:#1c1f2b}
+.post-list .reade_more a:hover{color:#fff}
+.comment .comment{border-left:1px solid #393f56;}
+.post-list .meta footer span,.comment-meta a,.comment-author span,.infos,.infos a{color:#666e8e}
+.comment .comment-author .avatar,.comment .comment-author:before,#commentform input,#commentform textarea,#commentform input#submit:focus{color:#bdcadb;background:#1c1f2b;border:1px solid #393f56;}
+#commentform textarea:focus,#commentform input:focus,#commentform input#submit:hover {border-color: #bdcadb;}
+#commentform input#submit{color:#fff;}
+#commentform input#submit:hover{background:#393f56;border-color: #393f56;}
+.nearbypost{box-shadow:0 1px 0 #393f56,0 -1px 0 #393f56;}
+.nearbypost div.alignright {box-shadow:-1px 0 0 #393f56;}

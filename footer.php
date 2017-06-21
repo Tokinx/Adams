@@ -26,6 +26,23 @@
         </p>
     </footer>
 </section>
+
+<div class="setting_tool iconfont">
+    <a class="back2top" style="display:none;">&#xe749;</a>
+    <a class="sosearch">&#xe741;</a>
+    <a class="socolor">&#xe728;</a>
+    <div class="s">
+        搜索
+    </div>
+    <div class="c">
+        <ul>
+            <li class="undefined">默认</li>
+            <li class="sepia">护眼</li>
+            <li class="night">夜晚</li>
+        </ul>
+    </div>
+</div>
+
 <?php wp_footer();?>
 <script data-no-instant>
     (function ($) {

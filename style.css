@@ -5,7 +5,7 @@
     Description:Simple is beautiful
     Author:Tokin
     Author URI:https://biji.io
-    Version:1.0.9
+    Version:1.1.0
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -14,7 +14,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
-body{line-height: 1;background: #FFF;transition: .3s;font-family:"Exo 2", "Trebuchet MS","Helvetica","Arial",'PingFang SC','Hiragino Sans GB','STHeiti Light','Microsoft YaHei','SimHei','WenQuanYi Micro Hei',sans-serif;}
+body{line-height: 1;background: #FFF;font-family:"Exo 2", "Trebuchet MS","Helvetica","Arial",'PingFang SC','Hiragino Sans GB','STHeiti Light','Microsoft YaHei','SimHei','WenQuanYi Micro Hei',sans-serif;}
 html,body{overflow-x:hidden;-webkit-overflow-scrolling: touch;-overflow-scrolling: touch;}
 ol, ul { list-style: none; }
 input,textarea,button {outline:none;-webkit-appearance:none;}
@@ -55,17 +55,17 @@ table {border-collapse:collapse;}
 a { color: inherit; text-decoration: none; }
 a:hover { color: #3274ff;}
 body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-@font-face {
-  font-family: 'iconfont';  /* project id 249018 */
-  src: url('//at.alicdn.com/t/font_1i3aw74etlr6n7b9.eot');
-  src: url('//at.alicdn.com/t/font_1i3aw74etlr6n7b9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1i3aw74etlr6n7b9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1i3aw74etlr6n7b9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1i3aw74etlr6n7b9.svg#iconfont') format('svg');
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_e9kaz27klwvobt9.eot?t=1498026937139'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_e9kaz27klwvobt9.eot?t=1498026937139#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_e9kaz27klwvobt9.woff?t=1498026937139') format('woff'), /* chrome, firefox */
+  url('//at.alicdn.com/t/font_e9kaz27klwvobt9.ttf?t=1498026937139') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_e9kaz27klwvobt9.svg?t=1498026937139#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
   font-family:"iconfont" !important;
+  font-size:16px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -84,13 +84,16 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .icon-social-youtube a:before { content: "\e61b"; }
 .icon-social-wechat a:before { content: "\e624"; }
 .icon-social-qq a:before { content: "\e626"; }
-.icon-home_light a:before { content: "\e7d4"; }
-.icon-search_light a:before { content: "\e7da"; }
-.icon-scan_light a:before { content: "\e7db"; }
-.icon-comment_light a:before { content: "\e7e0"; }
-.icon-appreciate_light a:before { content: "\e7e1"; }
-.icon-medal_light a:before { content: "\e7e6"; }
-.icon-news_hot_light a:before { content: "\e7e7"; }
+.icon-barrage a:before { content: "\e6e3"; }
+.icon-homepage a:before { content: "\e702"; }
+.icon-message a:before { content: "\e70c"; }
+.icon-praise a:before { content: "\e71a"; }
+.icon-redpacket a:before { content: "\e71d"; }
+.icon-scan a:before { content: "\e722"; }
+.icon-service a:before { content: "\e727"; }
+.icon-setup a:before { content: "\e728"; }
+.icon-search a:before { content: "\e741"; }
+.icon-packup a:before { content: "\e749"; }
 
 ::-webkit-scrollbar-track-piece{background-color:#fff;}
 ::-webkit-scrollbar{width:10px;height:10px;}
@@ -117,16 +120,16 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .header .menu li:last-child:after,.footer .menu li:last-child:after{margin:0;display:none;}
 .current-menu-item a,.current_page_item a,.current-menu-parent a,.current-post-parent a{color:#3274ff;}
 
-.infos{line-height:3rem;height:3rem;color:#AAB2BD;border-bottom:1px solid #E6E9ED;font-size:.9rem;position:absolute;top:100%;left:0;right:0;transition: 0;z-index:999;background:#fff;}
+.infos{line-height:3rem;height:3rem;color:#AAB2BD;border-bottom:1px solid #E6E9ED;font-size:.9rem;position:absolute;top:100%;left:0;right:0;transition: 0;z-index: 99;background:#fff;}
 .infos .dot-good.done,.infos .dot-good:hover{color: #FC6E51;}
-.infos .donate,.infos .donate a{display:inline-block;float:right;color:#FC6E51;}
+.infos .donate,.infos .donate a{display:inline-block;float:right;color:#FC6E51;font-size:14px;}
 .infos .donate .window,.infos .share .qrcode{display:none;padding:10px;text-align:center;line-height:1.5rem;}
 .infos .donate .window ul li,.infos.share-close .share img{max-width: 110px;display:inline-block;}
 .infos .donate .window ul li:after{content:'微信';display:block;}
 .infos .donate .window ul li.alipay:after{content:'支付宝';}
 .infos .donate .window ul li img{width:100%;height:100%;}
 .infos.donate-close .donate .window,.infos.share-close .qrcode{display:block;background:#fff;box-shadow:0 2px 3px rgba(170, 178, 189, 0.4);height:150px;min-width:130px;position:absolute;top:46px;right:20px;}
-.infos .share,.infos .share a{display:inline-block;float:right;margin:0 5px 0 0;color:#2ABA66;}
+.infos .share,.infos .share a{display:inline-block;float:right;margin:0 5px 0 0;color:#2ABA66;font-size:14px;}
 .infos .share .share-close,.infos.share-close .share i{display:block;position:absolute;top:5px;left:0;right:0;}
 .infos.share-close .share a,.infos.donate-close .donate a{box-shadow:0 -1px;}
 .infos.share-close .share i,.infos .donate .window ul li:after{font-size:12px;font-style:normal;background:none;box-shadow:none;top:118px;}
@@ -271,6 +274,16 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .alink a{display:inline-block;padding:15px 0;}
 .alink hr{border:0;height:1px;width:100%;background:#E6E9ED;margin:0 auto;}
 
+.setting_tool{position:fixed;bottom:38%;right:0;width:32px;padding:5px 0;box-shadow:0 0 2px rgba(0,0,0,.1);z-index:99;background:#fff;}
+.setting_tool a{font-size:24px;text-align:center;line-height:32px;width:32px;height:32px;display:block;cursor:pointer;background:#fff;}
+.setting_tool div{display:none;position:absolute;width:200px;right:100%;background:#fff;box-shadow:0 0 2px rgba(0,0,0,.1);padding:10px;}
+.setting_tool.colors div.c{display:block;height:55px;bottom:-20px;z-index:-2;}
+.setting_tool.search div.s{display:block;height:36px;bottom:32px;z-index:-1;}
+.setting_tool.colors div.c ul{text-align:center;padding:4px 0;font-size:12px;}
+.setting_tool.colors div.c li{display:inline-block;width:50px;border-radius:99px;margin:0 2px;background:#fff;color:#3274ff;box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;height:28px;line-height:28px;cursor:pointer;}
+.setting_tool.colors div.c li.sepia{background:#eae0be;color:#704214}
+.setting_tool.colors div.c li.night{background:#393f56;color:#bdcadb;}
+
 /* Archives */
 .archives table,.archives tr,.archives td{border:none;color:#ccc;}
 .archives tr a,ul.link-items li a,.readerswall li a{color:#666;line-height:32px;text-decoration:none;}
@@ -293,5 +306,5 @@ ul.link-items li{display:inline-block;margin:1em 2em;}
 
 @media (max-width:680px){
   .post-list .meta main .thumb{width:120px;height:100px;}
-  .post-list .meta main .thumb:after,.infos.fixed .fields{display:none;}
+  .post-list .meta main .thumb:after,.infos.fixed .fields,.infos.fixed .fixed-menus{display:none;}
 }
