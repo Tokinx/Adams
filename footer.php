@@ -38,9 +38,12 @@
     </div>
     <div class="c">
         <ul>
-            <li class="undefined">默认</li>
-            <li class="sepia">护眼</li>
-            <li class="night">夜晚</li>
+            <li class="color undefined">默认</li>
+            <li class="color sepia">护眼</li>
+            <li class="color night">夜晚</li>
+            <li class="hr"></li>
+            <li class="font serif">Serif</li>
+            <li class="font sans">Sans</li>
         </ul>
     </div>
 </div>

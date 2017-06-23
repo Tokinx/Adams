@@ -277,11 +277,16 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .setting_tool{position:fixed;bottom:38%;right:0;width:32px;padding:5px 0;box-shadow:0 0 2px rgba(0,0,0,.1);z-index:99;background:#fff;}
 .setting_tool a{font-size:24px;text-align:center;line-height:32px;width:32px;height:32px;display:block;cursor:pointer;background:#fff;}
 .setting_tool div{display:none;position:absolute;width:200px;right:100%;background:#fff;box-shadow:0 0 2px rgba(0,0,0,.1);padding:10px;}
-.setting_tool.colors div.c{display:block;height:55px;bottom:-20px;z-index:-2;}
+.setting_tool.colors div.c{display:block;height:100px;bottom:-65px;z-index:-2;}
 .setting_tool.colors div.c ul{text-align:center;padding:4px 0;font-size:12px;}
-.setting_tool.colors div.c li{display:inline-block;width:50px;border-radius:99px;margin:0 2px;background:#fff;color:#3274ff;box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;height:28px;line-height:28px;cursor:pointer;}
-.setting_tool.colors div.c li.sepia{background:#eae0be;color:#704214}
-.setting_tool.colors div.c li.night{background:#393f56;color:#bdcadb;}
+.setting_tool.colors div.c li{cursor:pointer;}
+.setting_tool.colors div.c li.color{display:inline-block;width:50px;border-radius:99px;margin:0 2px;background:#fff;color:#3274ff;box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;height:28px;line-height:28px;}
+.setting_tool.colors div.c li.color.sepia{background:#eae0be;color:#704214}
+.setting_tool.colors div.c li.color.night{background:#393f56;color:#bdcadb;}
+.setting_tool.colors div.c li.hr{display:block;width:100%;height:1px;background:rgba(0,0,0,.06);margin:8% 0 6%;}
+.setting_tool.colors div.c li.font{display:inline-block;width:50px;font-size:16px;line-height:20px;margin:0 16px;}
+.setting_tool.colors div.c li.font.serif{font-family:serif;}
+.setting_tool.colors div.c li.font:hover{font-weight:bold;}
 .setting_tool.search div.s{display:block;height:36px;bottom:32px;z-index:-1;padding:0;}
 .setting_tool.search div.s input{height:36px;bottom:32px;width:100%;padding:0 10px;}
 
@@ -298,9 +303,7 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 
 ul.link-items li{display:inline-block;margin:1em 2em;}
 
-.main-load{
-  animation:main-load 1s;
-}
+.main-load{animation:main-load 1s;}
 @keyframes main-load{
   0%{opacity:0;transform: translateY(20px);}
 }
