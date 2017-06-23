@@ -32,7 +32,9 @@
     <a class="sosearch">&#xe741;</a>
     <a class="socolor">&#xe728;</a>
     <div class="s">
-        搜索
+        <form method="get" action="<?php bloginfo('url'); ?>" class="search">
+            <input class="search-key" name="s" autocomplete="off" placeholder="Search keywords..." type="text" value="" required="required">
+        </form>
     </div>
     <div class="c">
         <ul>
