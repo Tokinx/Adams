@@ -69,10 +69,15 @@
                 });
 <?php }?>
                 prettyPrint();
+                
+                
             }
         });
-})(jQuery);
-<?php if(!get_theme_mod('biji_setting_pjax')){ ?>
+    })(jQuery);
+<?php if(get_theme_mod('biji_setting_footInfo')){ 
+        echo get_theme_mod('biji_setting_footInfo') . "\n";
+    }
+    if(!get_theme_mod('biji_setting_pjax')){ ?>
     InstantClick.on('change', function(isInitialLoad) {
         jQuery.adamsOverload();
         if (isInitialLoad === false) {

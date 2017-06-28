@@ -81,6 +81,9 @@ function theme_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'biji_setting_postAd', array(
         'default' => '',
     ) );
+    $wp_customize->add_setting( 'biji_setting_footInfo', array(
+        'default' => '',
+    ) );
     
     $wp_customize->add_control( 'biji_setting_enc', array(
         'label'    => '允许纯英文评论',
@@ -125,6 +128,11 @@ function theme_customize_register( $wp_customize ) {
     ) );
     $wp_customize->add_control( 'biji_setting_postAd', array(
         'label'    => '文章结尾显示信息',
+        'section'  => 'biji_setting',
+        'type'     => 'textarea'
+    ) );
+    $wp_customize->add_control( 'biji_setting_footInfo', array(
+        'label'    => '页脚追加JS代码',
         'section'  => 'biji_setting',
         'type'     => 'textarea'
     ) );
