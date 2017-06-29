@@ -16,6 +16,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
 body{line-height: 1;background: #FFF;font-family:"Exo 2", "Trebuchet MS","Helvetica","Arial",'PingFang SC','Hiragino Sans GB','STHeiti Light','Microsoft YaHei','SimHei','WenQuanYi Micro Hei',sans-serif;}
 html,body{overflow-x:hidden;-webkit-overflow-scrolling: touch;-overflow-scrolling: touch;}
+html{height:100%;}
 ol, ul { list-style: none; }
 input,textarea,button {outline:none;-webkit-appearance:none;}
 blockquote,q {quotes:none;}
@@ -159,8 +160,10 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .post-list .meta footer span.hr{display:inline-block;width:2px;height:2px;background:#AAB2BD;margin:4px 1rem;}
 
 .post-list .reade_more{text-align:center;margin:12% 0}
-.post-list .reade_more a{box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;background:#F5F7FA;padding:10px 5%;border-radius:20px;transition:.3s;}
-.post-list .reade_more a:hover{background:#3274ff;color:#fff;padding:10px 10%;}
+.post-list .reade_more a,.post-list .reade_more .page-numbers{box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;background:#F5F7FA;padding:10px 5%;border-radius:20px;transition:.3s;}
+.post-list .reade_more a:hover,.post-list .reade_more span.page-numbers{background:#3274ff;color:#fff;padding:10px 10%;}
+.post-list .reade_more .page-numbers,.post-list .reade_more .page-numbers:hover,.post-list .reade_more span.page-numbers{display:inline-block;border-radius:2px;padding:0;background:#fff;margin:0 .6%;padding:1% 2.6%;}
+.post-list .reade_more .page-numbers:hover,.post-list .reade_more span.page-numbers{background:#3274ff;}
 
 /* Connent */
 .post_article img {max-width:100%;display:block;margin:auto;height:auto;box-shadow:0 0 0 1px rgba(0,0,0,.06);}
@@ -288,7 +291,7 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .setting_tool.colors div.c li.font.serif{font-family:serif;}
 .setting_tool.colors div.c li.font:hover{font-weight:bold;}
 .setting_tool.search div.s{display:block;height:36px;bottom:32px;z-index:-1;padding:0;}
-.setting_tool.search div.s input{height:36px;bottom:32px;width:100%;padding:0 10px;}
+.setting_tool.search div.s input{height:36px;bottom:32px;width:100%;padding:0 10px;font-size:.9rem;}
 
 /* Archives */
 .archives table,.archives tr,.archives td{border:none;color:#ccc;}

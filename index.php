@@ -36,8 +36,11 @@
                     <p>这个页面没有你要找的内容。</p>
                 </article>
             <?php }; ?>
+                <!--<nav class="reade_more">-->
+                <!--    <a href="/archives">Reade more...</a>-->
+                <!--</nav>-->
                 <nav class="reade_more">
-                    <a href="/archives">Reade more...</a>
+                    <?php if (function_exists('pagenavi')) { pagenavi(1); } ?>
                 </nav>
             </div>
         </div>
