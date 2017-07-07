@@ -96,7 +96,7 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .icon-search a:before { content: "\e741"; }
 .icon-packup a:before { content: "\e749"; }
 
-::-webkit-scrollbar-track-piece{background-color:#fff;}
+::-webkit-scrollbar-track-piece{background:rgba(255, 255, 255, 0);}
 ::-webkit-scrollbar{width:10px;height:10px;}
 ::-webkit-scrollbar-thumb{background:#666;border:2px solid #fff}
 
@@ -265,7 +265,7 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .navigation .alignleft a,.navigation .alignright a{margin:0 10px;}
 
 .nearbypost{letter-spacing:-.8rem;padding:1rem 0;margin:8% 0;font-size:.96rem;box-shadow:0 1px 0 #E6E9ED,0 -1px 0 #E6E9ED;/* overflow: hidden; */}
-.nearbypost div{float:none;margin:auto;display:inline-block;width:50%;letter-spacing:.06rem;position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.nearbypost div{float:none;margin:auto;display:inline-block;width:50%;letter-spacing:.06rem;line-height:1.08rem;position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .nearbypost div a:before{content:'« '}
 .nearbypost div.alignright {box-shadow:-1px 0 0 #E6E9ED;text-align:right;}
 .nearbypost div.alignright a:before {display:none;}
@@ -305,6 +305,12 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .readerswall li span {display:block;width:140%;margin:0 0 0 -20%;height:2rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 
 ul.link-items li{display:inline-block;margin:1em 2em;}
+
+ul.links{background:none;padding:0;margin:0;letter-spacing:-.8rem;}
+ul.links li{list-style:none;display:inline-block;width:31.333%;margin:1%;letter-spacing:0;text-align:center;}
+ul.links li{background:#fcfcfc;box-shadow:0 0 0 1px rgba(0, 0, 0, .1) inset,0 0 0 2px #fff inset;border-radius:2px;transition:.3s;}
+ul.links li:hover{background:#fff;box-shadow:0 0 0 1px rgba(0, 0, 0, .1) inset,0 0 6px 2px rgba(0, 0, 0, .02);}
+ul.links li a{display:block;padding:12px 5px;height:100%;text-decoration:none;}
 
 .main-load{animation:main-load 1s;}
 @keyframes main-load{
