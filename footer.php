@@ -70,7 +70,9 @@
 <?php }?>
                 prettyPrint();
                 
-                
+                $('ul.links li a').each(function(){
+                    $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain='+$(this).attr("href")+')"></div>')
+                });
             }
         });
     })(jQuery);

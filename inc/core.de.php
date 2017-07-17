@@ -8,7 +8,7 @@ if (function_exists('register_nav_menus')){
 }
 class description_walker extends Walker_Nav_Menu
 {
-	function start_el(&$output, $item, $depth, $args)
+	function start_el(&$output, $item, $depth, $args, $id = 0)
 	{
 		global $wp_query;
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';

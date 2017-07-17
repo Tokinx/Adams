@@ -307,10 +307,16 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 ul.link-items li{display:inline-block;margin:1em 2em;}
 
 ul.links{background:none!important;box-shadow:none!important;padding:0;margin:0;letter-spacing:-.8rem;}
-ul.links li{list-style:none;display:inline-block;width:31.333%;margin:1%;letter-spacing:0;text-align:center;}
-ul.links li{background: rgba(0, 0, 0, .04);box-shadow:0 0 0 1px rgba(0, 0, 0, .1) inset,0 0 0 2px rgba(255, 255, 255, 0.5) inset;transition:.3s;}
-ul.links li:hover{background:#fff;box-shadow:0 0 0 1px rgba(0, 0, 0, .1) inset,0 0 6px 2px rgba(0, 0, 0, .02);}
-ul.links li a{display:block;padding:12px 5px;height:100%;text-decoration:none;}
+ul.links li{list-style:none;display:inline-block;width:31.333%;margin: 1%;letter-spacing:0;text-align:center;position:relative;transition:.3s;}
+ul.links li{background: rgba(0, 0, 0, .01);box-shadow:0 0 0 1px rgba(255, 255, 255, 0.1) inset;}
+ul.links li:hover{transform:translate(0,-5px);background:none;}
+ul.links li:before,ul.links li:after{content:'';position:absolute;top:0;left:0;right:0;background:rgba(255, 255, 255, .6);z-index:-1;transition:.6s;}
+ul.links li:hover:before,ul.links li:hover:after{height:100%;}
+ul.links li:hover:before{left:100%;}
+ul.links li:hover:after{right:100%;}
+ul.links li a{display:block;padding:12px 5px;height:100%;text-decoration:none;position:relative;}
+ul.links li .bg{background-position: center;position: absolute;top: 0;left: 0;height: 100%;width: 100%;background-size: cover;filter: blur(15px);z-index: -2;opacity:0;transition:.6s;}
+ul.links li:hover .bg{opacity:.32}
 
 .main-load{animation:main-load 1s;}
 @keyframes main-load{
