@@ -8,7 +8,7 @@ if (function_exists('register_nav_menus')){
 }
 class description_walker extends Walker_Nav_Menu
 {
-	function start_el(&$output, $item, $depth, $args, $id = 0)
+	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
 	{
 		global $wp_query;
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -192,12 +192,13 @@ function Qiniu_cdn_replace($code)
         $cdn_file = 'bmp|zip|rar|7z';
         if(strstr($_SERVER['HTTP_ACCEPT'], 'image/webp')) $webp = '?imageView2/0/format/webp';
         $cdn_dirs = str_replace('-', '\-', 'wp-content|wp-includes');
-        $regex = '/' . str_replace('/', '\/', preg_replace('#^\w+://#', '//', site_url())) . '\/((' . $cdn_dirs . ')\/[^\s\?\\\'\"\;\>\<]{1,}.(' . $cdn_img . '))([\"\\\'\s\?]{1})/';
-        $code = preg_replace($regex, '' . preg_replace('#^\w+://#', '//', get_theme_mod('biji_setting_cdn')) . '/$1' . $webp . '$4', $code);
-        $regex = '/' . str_replace('/', '\/', preg_replace('#^\w+://#', '//', site_url())) . '\/((' . $cdn_dirs . ')\/[^\s\?\\\'\"\;\>\<]{1,}.(' . $cdn_file . '))([\"\\\'\s\?]{1})/';
-        $code = preg_replace($regex, '' . preg_replace('#^\w+://#', '//', get_theme_mod('biji_setting_cdn')) . '/$1$4', $code);
+        $code = preg_replace(cdn_regex($cdn_dirs, $cdn_img), '' . preg_replace('#^\w+://#', '//', get_theme_mod('biji_setting_cdn')) . '/$1' . $webp . '$4', $code);
+        $code = preg_replace(cdn_regex($cdn_dirs, $cdn_file), '' . preg_replace('#^\w+://#', '//', get_theme_mod('biji_setting_cdn')) . '/$1$4', $code);
     }
     return $code;
+}
+function cdn_regex($dirs, $type){
+    return '/' . str_replace('/', '\/', preg_replace('#^\w+://#', '//', site_url())) . '\/((' . $dirs . ')\/[^\s\?\\\'\"\;\>\<]{1,}.(' . $type . '))([\"\\\'\s\?]{1})/';
 }
 
 // 首页过滤分类文章
