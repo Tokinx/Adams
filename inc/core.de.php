@@ -188,11 +188,14 @@ add_action( 'template_redirect', 'Qiniu_cdn' );
 function Qiniu_cdn_replace($code)
 {
     if(get_theme_mod('biji_setting_cdn')){
-        $cdn_exts = 'png|jpg|jpeg|gif|bmp|zip|rar|7z';
-        if (strstr($_SERVER['HTTP_ACCEPT'], 'image/webp')) $webp = '?imageView2/0/format/webp';
+        $cdn_img = 'png|jpg|jpeg|gif';
+        $cdn_file = 'bmp|zip|rar|7z';
+        if(strstr($_SERVER['HTTP_ACCEPT'], 'image/webp')) $webp = '?imageView2/0/format/webp';
         $cdn_dirs = str_replace('-', '\-', 'wp-content|wp-includes');
-        $regex = '/' . str_replace('/', '\/', preg_replace('#^\w+://#', '//', site_url())) . '\/((' . $cdn_dirs . ')\/[^\s\?\\\'\"\;\>\<]{1,}.(' . $cdn_exts . '))([\"\\\'\s\?]{1})/';
+        $regex = '/' . str_replace('/', '\/', preg_replace('#^\w+://#', '//', site_url())) . '\/((' . $cdn_dirs . ')\/[^\s\?\\\'\"\;\>\<]{1,}.(' . $cdn_img . '))([\"\\\'\s\?]{1})/';
         $code = preg_replace($regex, '' . preg_replace('#^\w+://#', '//', get_theme_mod('biji_setting_cdn')) . '/$1' . $webp . '$4', $code);
+        $regex = '/' . str_replace('/', '\/', preg_replace('#^\w+://#', '//', site_url())) . '\/((' . $cdn_dirs . ')\/[^\s\?\\\'\"\;\>\<]{1,}.(' . $cdn_file . '))([\"\\\'\s\?]{1})/';
+        $code = preg_replace($regex, '' . preg_replace('#^\w+://#', '//', get_theme_mod('biji_setting_cdn')) . '/$1$4', $code);
     }
     return $code;
 }
