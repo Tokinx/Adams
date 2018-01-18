@@ -1,4 +1,5 @@
 (function ($) {
+    
     $(document).ready(function(){
         $('.infos .donate,.infos .share').click(function(){
             if($(this).attr('class')=='donate'){

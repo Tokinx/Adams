@@ -6,7 +6,7 @@
  * @subpackage Adams
  */
 if ( !defined( 'THEME_NAME' ) ) define( 'THEME_NAME', 'Adams' );
-if ( !defined( 'THEME_DB_VERSION' ) ) define( 'THEME_DB_VERSION', 'v1.0.2' );
+if ( !defined( 'THEME_DB_VERSION' ) ) define( 'THEME_DB_VERSION', 'v1.2.5' );
 
 require( get_template_directory() . '/inc/core.de.php' );
 
@@ -16,16 +16,17 @@ require( get_template_directory() . '/inc/core.de.php' );
 //     return $default;
 // }
 
-function biji_sc_download($atts, $content=null, $code="") {
-    $return = '<a href="' . $atts['href'] . '" class="download">' . $content . '</a>';
-    return $return;
-}
-add_shortcode('dl', 'biji_sc_download');
+// function biji_sc_download($atts, $content=null, $code="") {
+//     $return = '<a href="' . $atts['href'] . '" class="download">' . $content . '</a>';
+//     return $return;
+// }
+// add_shortcode('dl', 'biji_sc_download');
 
 /**
  * 挂载脚本
  */
 function biji_enqueue_scripts() {
+	wp_deregister_script('jquery');
     wp_enqueue_script(
         'jquery-min',
         '//cdn.staticfile.org/jquery/3.1.1/jquery.min.js',
@@ -65,7 +66,7 @@ function biji_enqueue_scripts() {
         THEME_DB_VERSION
     );
 }
-add_action( 'wp_enqueue_scripts', 'biji_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'biji_enqueue_scripts', 1);
 
 // 优化代码
 remove_action( 'wp_head', 'feed_links_extra', 3 ); // 额外的feed,例如category, tag页
@@ -79,7 +80,7 @@ remove_filter( 'the_content_feed',  'wp_staticize_emoji');
 remove_filter( 'comment_text_rss',  'wp_staticize_emoji');
 remove_filter( 'wp_mail',    'wp_staticize_emoji_for_email');
 add_filter('login_errors', create_function('$a', "return null;")); //取消登录错误提示
-add_filter( 'show_admin_bar', '__return_false' ); //删除AdminBar
+// add_filter( 'show_admin_bar', '__return_false' ); //删除AdminBar
 if ( function_exists('add_theme_support') )add_theme_support('post-thumbnails'); //添加特色缩略图支持
 
 // 禁止wp-embed.min.js
@@ -160,7 +161,6 @@ function dangopress_esc_html($content)
     $regex = '/(<code.*?>)(.*?)(<\/code>)/sim';
     return preg_replace_callback($regex, dangopress_esc_callback, $content);
 }
-
 function dangopress_esc_callback($matches)
 {
     $tag_open = $matches[1];
@@ -478,4 +478,5 @@ $mytheme_update_checker = new ThemeUpdateChecker(
 	'adams',
 	'https://biji.io/update/adams.json'
 );
+
 // 全部配置完毕

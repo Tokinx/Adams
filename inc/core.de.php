@@ -203,13 +203,13 @@ function cdn_regex($dirs, $type){
 
 // 首页过滤分类文章
 function exclude_category($query){
-    $exclude_array=explode(",",get_theme_mod('biji_setting_exclude'));
+    $exclude_array = explode(",", get_theme_mod('biji_setting_exclude'));
     $exclude = '';
-    foreach($exclude_array as $ex){
+    foreach($exclude_array as $k => $ex){
         if($ex>0){
-            $ex = $ex*-1;
+            $ex *= -1;
         }
-        $exclude .= $ex;
+        $exclude .= $ex.',';
     }
     if($query-> is_home()&& $query-> is_main_query()){
         $query-> set('cat',$exclude);

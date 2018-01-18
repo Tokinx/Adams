@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="<?php bloginfo('template_url'); ?>/style.css?<?php echo THEME_DB_VERSION;?>" type="text/css" rel="stylesheet">
+    <link href="<?php bloginfo('template_url'); ?>/static/caomei1.2.8/style.css?<?php echo THEME_DB_VERSION;?>" type="text/css" rel="stylesheet">
     <?php wp_head(); ?>
     
     <script>
@@ -46,17 +47,17 @@
             <!--<div class="fixed-menus"></div>-->
             
             <div class="fields">
-                <span><i class="iconfont">&#xe6e3;</i> <time datetime="<?php echo get_the_time('c');?>" itemprop="datePublished" pubdate><?php the_time('Y-m-d') ?></time></span> / 
-                <span><i class="iconfont">&#xe70c;</i> <?php comments_number('0', '1', '%'); ?>评</span> / 
+                <span><i class="czs-time-l"></i> <time datetime="<?php echo get_the_time('c');?>" itemprop="datePublished" pubdate><?php the_time('Y-m-d') ?></time></span> / 
+                <span><i class="czs-talk-l"></i> <?php comments_number('0', '1', '%'); ?>评</span> / 
                 <a href="javascript:;" data-action="topTop" data-id="<?php the_ID(); ?>" class="dot-good <?php echo isset($_COOKIE['dotGood_' . $post->ID])?'done':''; ?>">
-                    <i class="iconfont">&#xe71a;</i>
+                    <i class="czs-thumbs-up-l"></i><i class="czs-thumbs-up"></i>
                     <span class="count"><?php echo get_post_meta($post->ID, 'dotGood', true) ? get_post_meta($post->ID, 'dotGood', true) : '0';?></span>赞
                 </a>
             </div>
             
             <div class="socials">
                 <div class="donate">
-                    <a href="javascript:;" class="iconfont">&#xe71d; 赏</a>
+                    <a href="javascript:;"><i class="czs-coin-l s"></i><i class="czs-coin h"></i> 赏</a>
                     <div class="window">
                         <ul>
                             <?php if (get_option('biji_pay_img_alipay')) echo '<li class="alipay"><img src="' . get_option('biji_pay_img_alipay') . '"/></li>'; ?>
@@ -65,7 +66,7 @@
                     </div>
                 </div>
                 <div class="share">
-                    <a href="javascript:;" class="iconfont" data-qrcode="//api.qrserver.com/v1/create-qr-code/?size=150x150&margin=10&data=<?php the_permalink(); ?>">&#xe722; 码</a>
+                    <a href="javascript:;" data-qrcode="//api.qrserver.com/v1/create-qr-code/?size=150x150&margin=10&data=<?php the_permalink(); ?>"><i class="czs-scan-l s"></i><i class="czs-qrcode-l h"></i> 码</a>
                 </div>
             </div>
         <?php } else { $placard = get_theme_mod('biji_setting_placard');?>

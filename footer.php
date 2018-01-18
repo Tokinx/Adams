@@ -1,17 +1,5 @@
-<section class="alink">
-    <div class="container">
-        <a href="https://sb.sb/" title="烧饼博客" target="_blank">烧饼博客</a>
-        <a href="https://saki.ssl.do/aff.php?aff=106" title="SSL 证书购买" target="_blank">SSL证书</a>
-        <a target="_blank" href="http://www.isweetnight.com/ ">sweetnight床垫怎么样</a>
-        <a target="_blank" href="http://www.ilangzi.com/">朗姿官网</a>
-        <a target="_blank" href="http://www.imengjie.com/">梦洁家纺旗舰店</a>
-        <a target="_blank" href="http://www.xiangying.org/">香影官方旗舰店</a>
-        <a target="_blank" href="http://www.yanyu3.com/">颜域旗舰店</a>
-        <hr>
-    </div>
-</section>
-<section class="container">
-    <footer class="footer">
+<footer class="footer">
+	<section class="container">
         <?php wp_nav_menu(
             array(
                 'container' => false,
@@ -24,16 +12,18 @@
                  if(get_option('zh_cn_l10n_icp_num')) echo " . " . get_option('zh_cn_l10n_icp_num');?></span>
             <span class='right'>Theme by <a href="https://biji.io" target="_blank">Adams</a></span>
         </p>
-    </footer>
-</section>
+	</section>
+</footer>
+
+
 
 <div class="setting_tool iconfont">
-    <a class="back2top" style="display:none;">&#xe749;</a>
-    <a class="sosearch">&#xe741;</a>
-    <a class="socolor">&#xe728;</a>
+    <a class="back2top" style="display:none;"><i class="czs-arrow-up-l"></i></a>
+    <a class="sosearch"><i class="czs-search-l"></i></a>
+    <a class="socolor"><i class="czs-clothes-l"></i></a>
     <div class="s">
         <form method="get" action="<?php bloginfo('url'); ?>" class="search">
-            <input class="search-key" name="s" autocomplete="off" placeholder="Search keywords..." type="text" value="" required="required">
+            <input class="search-key" name="s" autocomplete="off" placeholder="输入关键词..." type="text" value="" required="required">
         </form>
     </div>
     <div class="c">
@@ -61,7 +51,7 @@
                 $.viewImage({
                     'target'  : '.post_article img,.post_article a,a.vi',
                     'exclude' : '.readerswall img',
-                    'delay'   : 0
+                    'delay'   : 300
                 });
 <?php } if(!get_theme_mod('biji_setting_lately')){ ?>
                 $.lately({
@@ -71,7 +61,9 @@
                 prettyPrint();
                 
                 $('ul.links li a').each(function(){
-                    $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain='+$(this).attr("href")+')"></div>')
+                    if($(this).parent().find('.bg').length==0){
+                        $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain='+$(this).attr("href")+')"></div>')
+                    }
                 });
             }
         });
