@@ -54,6 +54,14 @@
                     <span class="count"><?php echo get_post_meta($post->ID, 'dotGood', true) ? get_post_meta($post->ID, 'dotGood', true) : '0';?></span>赞
                 </a>
             </div>
+            <?php
+					$tags = get_tags();
+                    $html = ' / ';
+                    foreach ( $tags as $tag ) {
+	                	$html .= "<span><i class='czs-tag-l'></i> <a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'> ";
+	                    $html .= "{$tag->name} </a></span>";
+                    }
+            echo $html; ?>
             
             <div class="socials">
                 <div class="donate">
