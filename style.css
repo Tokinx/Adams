@@ -5,7 +5,7 @@
     Description:Simple is beautiful
     Author:Tokin
     Author URI:https://biji.io
-    Version:1.2.5
+    Version:1.2.6
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -65,7 +65,7 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .header{margin: 0 0 6rem;padding:4rem 0 2rem 0;position:relative;color:#656D78;font-size:.96rem;}
 .header h1 {margin: 0;font-size: 1.5rem;font-weight:bold;color:#434a54;display:inline-block;position:relative;z-index:1;}
 .header > .container > div.menu{display:none;}
-.header .social {position:absolute;right:0;top:0;font-family: 'iconfont';}
+.header .social {position:absolute;right:0;top:0;}
 .header .social ul{margin:0;padding:5px 0;overflow:visible;}
 .header .social li {display:inline-block;font-size:0;position:relative;}
 .header .social li img{display:none;position:absolute;top:60%;padding:5px;left:0;margin-left:-38px;width:100px;}
@@ -129,7 +129,7 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .post-list .meta:first-child{padding:0}
 .post-list .meta:first-child:before{display:none;}
 .post-list .meta header h2{font-size: 1.4rem;line-height:1.4rem;color:#434A54;position:relative;display:inline-block;font-weight:bolder;}
-.post-list .meta header h2:hover{coalor:#3274ff;}
+.post-list .meta header h2:hover{color:#3274ff;}
 .post-list .meta main {font-size:1rem;margin:2rem 0}
 .post-list .meta main .thumb{float:right;position:relative;margin:0 0 0 2%;width:180px;height:140px;border: 1px solid rgba(0,0,0,.05);background-color: #f0f0f0;background-position: 50%;background-size: cover;background-origin: border-box;}
 .post-list .meta main .thumb:after{content:'';position:absolute;top:8px;bottom:0;left:8px;right:0;width:10px;height:10px;border-radius:10px;background:#fff;
@@ -163,9 +163,9 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .post_article ol li {list-style-type:decimal;}
 .post_article ul li {list-style-type:disc;}
 .post_article ol p,.post_article ul p{margin:0}
-.post_article table {border-bottom:1px solid #504F4F;border-right:1px solid #504F4F;border-collapse:collapse;border-spacing:.06rem;margin:0 0 20px;width:100%;}
+.post_article table {margin:4% 0;border:1px solid #E6E9ED;font-size:14px;border-collapse:collapse;border-spacing:.06rem;width:100%;}
 .post_article th {font-size:.8rem;font-weight:bold;}
-.post_article th,.post_article td {border-top:1px solid #504F4F;padding:6px 10px 6px 6px;border-left:1px solid #504F4F;}
+.post_article th,.post_article td {border:1px solid #E6E9ED;padding:12px 6px;}
 .post_article dl {margin:0 20px;}
 .post_article dt {font-weight:bold;}
 .post_article dd {margin:0 0 20px;}
@@ -185,9 +185,9 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .gallery-columns-6 .gallery-item{width:16.6666667%!important;}
 .gallery .gallery-item dt:before {content: "";display: block;padding-top: 100%;}
 .gallery .gallery-item dt {position: relative;box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;background: #eee;cursor: pointer;overflow: hidden;}
+.gallery .gallery-item dd {margin:.6rem 0 0;font-size:14px;color:#CCD1D9;}
+.gallery .gallery-item a{display: block;width:100%;height:100%;position:absolute;top:0;}
 .gallery .gallery-item img{position:absolute;top: 0;left: 0;height:100%;width:100%;object-fit:cover;border:0!important;}
-
-
 
 /* Comments */
 .nocomments{display:none;}
