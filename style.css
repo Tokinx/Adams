@@ -5,7 +5,7 @@
     Description:Simple is beautiful
     Author:Tokin
     Author URI:https://biji.io
-    Version:1.2.7
+    Version:1.2.9
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -299,7 +299,15 @@ ul.links li a{display:block;padding:12px 5px;height:100%;text-decoration:none;po
 ul.links li .bg{background-position: center;position: absolute;top: 0;left: 0;height: 100%;width: 100%;background-size: cover;filter: blur(20px) brightness(110%) saturate(200%) contrast(120%);z-index: -2;opacity:0;transition:.6s;}
 ul.links li:hover .bg{opacity:.32}
 
-.main-load .post-list .meta,.main-load,.comments,.commentlist > li{-webkit-animation:.5s forwards 1 top-show;opacity:0;animation:.5s forwards 1 top-show;opacity:0;}
+.main-load .post-list .meta,.main-load,.comments,.commentlist > li{/*animation:.5s forwards 1 top-show;*/
+opacity:0;
+-webkit-animation-name: top-show;
+-webkit-animation-duration: .6s;
+-webkit-animation-fill-mode: forwards;
+animation-name: top-show;
+animation-duration: .6s;
+animation-fill-mode: forwards;
+}
 .main-load .post-list .meta:nth-child(2),.comments,.commentlist > li:nth-child(2){-webkit-animation-delay:.2s;animation-delay:.2s;}
 .main-load .post-list .meta:nth-child(3),.commentlist > li:nth-child(3){-webkit-animation-delay:.4s;animation-delay:.4s;}
 .main-load .post-list .meta:nth-child(4),.commentlist > li:nth-child(4){-webkit-animation-delay:.6s;animation-delay:.6s;}
@@ -322,6 +330,23 @@ ul.links li:hover .bg{opacity:.32}
   100%{opacity:1;}
 }
 @keyframes right-show{
+  0%{opacity:0;transform: translateX(20px);}
+  100%{opacity:1;}
+}
+
+@-webkit-keyframes top-show{
+  0%{opacity:0;transform: translateY(20px);}
+  100%{opacity:1;}
+}
+@-webkit-keyframes down-show{
+  0%{opacity:0;transform: translateY(-20px);}
+  100%{opacity:1;}
+}
+@-webkit-keyframes left-show{
+  0%{opacity:0;transform: translateX(-20px);}
+  100%{opacity:1;}
+}
+@-webkit-keyframes right-show{
   0%{opacity:0;transform: translateX(20px);}
   100%{opacity:1;}
 }
