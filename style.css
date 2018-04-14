@@ -5,7 +5,7 @@
     Description:Simple is beautiful
     Author:Tokin
     Author URI:https://biji.io
-    Version:1.2.6
+    Version:1.2.7
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -110,7 +110,7 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .infos .donate .window ul li:after{content:'微信';display:block;}
 .infos .donate .window ul li.alipay:after{content:'支付宝';}
 .infos .donate .window ul li img{width:100%;height:100%;}
-.infos.donate-close .donate .window,.infos.share-close .qrcode{animation:down-show .3s;display:block;background:#fff;box-shadow:0 2px 3px rgba(170, 178, 189, 0.4);height:150px;min-width:130px;position:absolute;top:46px;right:20px;}
+.infos.donate-close .donate .window,.infos.share-close .qrcode{-webkit-animation:down-show .3s;animation:down-show .3s;display:block;background:#fff;box-shadow:0 2px 3px rgba(170, 178, 189, 0.4);height:150px;min-width:130px;position:absolute;top:46px;right:20px;}
 .infos .share,.infos .share a{display:inline-block;float:right;margin:0 5px 0 0;color:#2ABA66;font-size:14px;}
 .infos .share .share-close,.infos.share-close .share .qrcode i{display:block;position:absolute;top:5px;left:0;right:0;}
 .infos.share-close .share a,.infos.donate-close .donate a{box-shadow:0 1px inset;}
@@ -272,7 +272,7 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .setting_tool.colors div.c li.font:hover{font-weight:bold;}
 .setting_tool.search div.s{display:block;height:36px;bottom:36px;z-index:-1;padding:0;}
 .setting_tool.search div.s input{height:36px;bottom:32px;width:100%;padding:0 10px;font-size:.9rem;}
-.setting_tool.colors div.c,.setting_tool.search div.s{animation:right-show .3s;}
+.setting_tool.colors div.c,.setting_tool.search div.s{-webkit-animation:right-show .3s;animation:right-show .3s;}
 
 /* Archives */
 .archives table,.archives tr,.archives td{border:none;color:#ccc;}
@@ -299,16 +299,16 @@ ul.links li a{display:block;padding:12px 5px;height:100%;text-decoration:none;po
 ul.links li .bg{background-position: center;position: absolute;top: 0;left: 0;height: 100%;width: 100%;background-size: cover;filter: blur(20px) brightness(110%) saturate(200%) contrast(120%);z-index: -2;opacity:0;transition:.6s;}
 ul.links li:hover .bg{opacity:.32}
 
-.main-load .post-list .meta,.main-load,.comments,.commentlist > li{animation:.5s forwards 1 top-show;opacity:0;}
-.main-load .post-list .meta:nth-child(2),.comments,.commentlist > li:nth-child(2){animation-delay:.2s;}
-.main-load .post-list .meta:nth-child(3),.commentlist > li:nth-child(3){animation-delay:.4s;}
-.main-load .post-list .meta:nth-child(4),.commentlist > li:nth-child(4){animation-delay:.6s;}
-.main-load .post-list .meta:nth-child(5),.commentlist > li:nth-child(5){animation-delay:.8s;}
-.main-load .post-list .meta:nth-child(6),.commentlist > li:nth-child(6){animation-delay:.10s;}
-.main-load .post-list .meta:nth-child(7),.commentlist > li:nth-child(7){animation-delay:.12s;}
-.main-load .post-list .meta:nth-child(8),.commentlist > li:nth-child(8){animation-delay:.14s;}
-.main-load .post-list .meta:nth-child(9),.commentlist > li:nth-child(9){animation-delay:.16s;}
-.main-load .post-list .meta:nth-child(10),.commentlist > li:nth-child(10){animation-delay:.18s;}
+.main-load .post-list .meta,.main-load,.comments,.commentlist > li{-webkit-animation:.5s forwards 1 top-show;opacity:0;animation:.5s forwards 1 top-show;opacity:0;}
+.main-load .post-list .meta:nth-child(2),.comments,.commentlist > li:nth-child(2){-webkit-animation-delay:.2s;animation-delay:.2s;}
+.main-load .post-list .meta:nth-child(3),.commentlist > li:nth-child(3){-webkit-animation-delay:.4s;animation-delay:.4s;}
+.main-load .post-list .meta:nth-child(4),.commentlist > li:nth-child(4){-webkit-animation-delay:.6s;animation-delay:.6s;}
+.main-load .post-list .meta:nth-child(5),.commentlist > li:nth-child(5){-webkit-animation-delay:.8s;animation-delay:.8s;}
+.main-load .post-list .meta:nth-child(6),.commentlist > li:nth-child(6){-webkit-animation-delay:.10s;animation-delay:.10s;}
+.main-load .post-list .meta:nth-child(7),.commentlist > li:nth-child(7){-webkit-animation-delay:.12s;animation-delay:.12s;}
+.main-load .post-list .meta:nth-child(8),.commentlist > li:nth-child(8){-webkit-animation-delay:.14s;animation-delay:.14s;}
+.main-load .post-list .meta:nth-child(9),.commentlist > li:nth-child(9){-webkit-animation-delay:.16s;animation-delay:.16s;}
+.main-load .post-list .meta:nth-child(10),.commentlist > li:nth-child(10){-webkit-animation-delay:.18s;animation-delay:.18s;}
 @keyframes top-show{
   0%{opacity:0;transform: translateY(20px);}
   100%{opacity:1;}
