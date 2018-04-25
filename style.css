@@ -1,11 +1,11 @@
 @charset "utf-8";
 /*
-    Theme Name:Adams
-    Theme URL:https://biji.io
-    Description:Simple is beautiful
-    Author:Tokin
-    Author URI:https://biji.io
-    Version:1.2.9
+	Theme Name: Adams
+	Theme URL: https://biji.io
+	Description: Simple is beautiful
+	Author: Tokin
+	Author URI: https://biji.io
+	Version: 1.2.9
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -199,6 +199,8 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .comment-body {padding:15px 0;position:relative;}
 .comment .comment .comment-body,.comment .comment .comment > .comment-body.new-comment {margin: 0 0 0 -16px;}
 .comment-body p {font-size:.8rem;clear:both;line-height:22px;margin:0 0 0 55px;}
+.comment-body pre{margin:1rem 0 0 2rem;}
+.comment-body pre code{max-height:14rem;padding:1rem;}
 .comment .comment .comment-body p {margin:0 0 0 40px;}
 .comment .comment .comment-body img{width:100%;}
 .comment br,.pingback .reply,.comment-meta a.comment-edit-link{display:none;}
