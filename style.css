@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.2.9
+	Version: 1.3.0
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -59,7 +59,7 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 ::-webkit-scrollbar {width: 8px;height: 8px;}
 ::-webkit-scrollbar-thumb {background: #656D78;}
 /* Layouts */
-.container {max-width: 780px;width: 96%;margin: 0 auto;padding: 0 2%;position: relative;}
+.container {max-width: 780px;width: 96%;margin: 0 auto;padding: 0 2%;position: relative;z-index: 100;}
 
 /* Header */
 .header{margin: 0 0 6rem;padding:4rem 0 2rem 0;position:relative;color:#656D78;font-size:.96rem;}
@@ -82,8 +82,8 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .header .menu li:last-child:after,.footer .menu li:last-child:after{margin:0;display:none;}
 .current-menu-item a,.current_page_item a,.current-menu-parent a,.current-post-parent a{color:#3274ff;}
 
-.infos{line-height:3rem;height:3rem;color:#AAB2BD;font-size:.9rem;position:absolute;top:100%;left:0;right:0;transition: 0;z-index: 99;background:#fff;}
-.infos:before,.infos:after {content:'';width:100%;height:1px;background:#E6E9ED;position:absolute;left:0;bottom:0;z-index:-1;}
+.infos{line-height:3rem;height:3rem;color:#AAB2BD;font-size:.9rem;position:absolute;top:100%;left:0;right:0;background:#fff;}
+.infos:before,.infos:after {content:'';width:100%;height:1px;background:#E6E9ED;position:absolute;left:0;bottom:0;z-index:1;}
 .infos:before{top:0;}
 .infos i{position:relative;top:.05rem;}
 .infos .dot-good.done,.infos .dot-good:hover{color: #FC6E51;}
@@ -116,7 +116,7 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .infos.share-close .share a,.infos.donate-close .donate a{box-shadow:0 1px inset;}
 .infos.share-close .share .qrcode i,.infos .donate .window ul li:after{font-size:12px;font-style:normal;background:none;box-shadow:none;top:118px;}
 .infos .donate .window ul li:after{margin:-8px;}
-.infos.fixed{position:fixed;top:0;left:0;right:0;box-shadow:0 2px 3px rgba(170, 178, 189, 0.2);}
+.infos.fixed{position:fixed;z-index: 101;top:0;left:0;right:0;box-shadow:0 2px 3px rgba(170, 178, 189, 0.2);}
 .infos.fixed:before,.infos.fixed:after{display:none;}
 .infos.fixed .socials,.infos .fixed-title,.infos.fixed .placard,.infos .fixed-menus{display:none;}
 .infos .fields,.infos.fixed .fixed-title{float:left;display:block;}
@@ -147,7 +147,7 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .post-list .reade_more .page-numbers:hover,.post-list .reade_more span.page-numbers{background:#3274ff;}
 
 /* Connent */
-.post_article img {max-width:100%;display:block;margin:auto;height:auto;box-shadow:0 0 0 1px rgba(0,0,0,.06);}
+.post_article img {max-width:100%;display:block;margin:auto;height:auto;}
 .post_article embed {max-width:100%;margin:10px auto;display:block;}
 .post_article a {text-decoration: underline;}
 .post_article p {margin:4% 0;line-height:2.4rem;}
@@ -256,7 +256,7 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .nearbypost div.alignright a:before {display:none;}
 .nearbypost div.alignright a:after {content:' »'}
 /* Footer */
-.footer {position:relative;line-height:2rem;font-size:.9rem;padding:0 0 1rem 0;border-top: 1px solid rgba(0, 0, 0, 0.08);box-shadow:0 -1px 0 rgba(255, 255, 255, 0.08);}
+.footer {position:relative;z-index:9;line-height:2rem;font-size:.9rem;padding:0 0 1rem 0;border-top: 1px solid rgba(0, 0, 0, 0.08);box-shadow:0 -1px 0 rgba(255, 255, 255, 0.08);}
 .footer .right{float:right}
 .footer .menu{text-align:center;border-bottom: 1px solid rgba(0, 0, 0, 0.08);box-shadow:0 1px 0 rgba(255, 255, 255, 0.08);padding: .5rem 0;margin-bottom:1rem;}
 .setting_tool{position:fixed;bottom:38%;right:0;width:36px;box-shadow:0 0 2px rgba(0,0,0,.1);z-index:99;background:#fff;}
