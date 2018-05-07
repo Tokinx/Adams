@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.3.0
+	Version: 1.3.1
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -227,12 +227,17 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 #commentform {clear:both;line-height:1rem;font-size:.8rem;}
 #commentform p.comment-notes,#commentform p.logged-in-as {display:none;}
 #commentform a {line-height:2.6rem;}
-#commentform label {display:block;position:relative;right:0;margin:10px 0 -4px 0;}
-#commentform textarea:focus,#commentform input:focus {border-color: #3274ff;}
-#commentform input,#commentform textarea,#commentform input#submit:focus{max-width:220px;width:100%;padding:8px 10px;margin:10px 0 0 0;border:1px solid #E6E9ED;background:#fff;font-size:.8rem;line-height:18px;}
+#commentform p {position:relative;top:1rem;margin:1rem 0;}
+#commentform p label {display:block;position:absolute;right:.5rem;top:.5rem;;}
+#commentform .comment-form-author,
+#commentform .comment-form-email,
+#commentform .comment-form-url{width:33.333333%;display: table-cell;}
+
+#commentform textarea:focus,#commentform input:focus {box-shadow:0 0 0 1px #3274ff;position:relative;z-index:999;}
+#commentform input,#commentform textarea,#commentform input#submit:focus{width:100%;padding:8px 10px;box-shadow:0 0 0 1px #E6E9ED;background:#fff;font-size:.8rem;line-height:18px;}
 #commentform textarea {max-width:800px;width:100%;height:8rem;}
 #commentform input#submit {cursor:pointer;}
-#commentform input#submit:hover {background:#3274ff;border-color: #3274ff;color:#fff;}
+#commentform input#submit:hover {background:#3274ff;box-shadow:0 0 0 1px #3274ff;color:#fff;}
 #commentform #loading,#commentform #error{margin:10px 0 0 0}
 
 .pingback{font-size:12px;box-shadow:0 0 0 1px #F5F7FA inset;margin:0 0 1rem;padding:1rem;}
