@@ -227,13 +227,18 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 #commentform {clear:both;line-height:1rem;font-size:.8rem;}
 #commentform p.comment-notes,#commentform p.logged-in-as {display:none;}
 #commentform a {line-height:2.6rem;}
-#commentform p {position:relative;top:1rem;margin:1rem 0;}
-#commentform p label {display:block;position:absolute;right:.5rem;top:.5rem;;}
+#commentform p {position:relative;top:1rem;margin:1rem 0 0;}
 #commentform .comment-form-author,
 #commentform .comment-form-email,
 #commentform .comment-form-url{width:33.333333%;display: table-cell;}
+#commentform .comment-form-smilies,
+#commentform .form-submit{margin:0;}
+#commentform .comment-form-smilies{z-index:9;top:-10px;margin:-15px 0;left:0;padding:0 10px;width:35px;overflow:hidden;white-space: nowrap;transition:.3s;}
+#commentform .comment-form-smilies:hover{width:100%;}
 
-#commentform textarea:focus,#commentform input:focus {box-shadow:0 0 0 1px #3274ff;position:relative;z-index:999;}
+#commentform p label {position:absolute;right:.5rem;top:.5rem;transition:.3s;z-index:2}
+#commentform textarea:focus,#commentform input:focus {box-shadow:0 0 0 1px #3274ff;position:relative;z-index:1;}
+#commentform p:hover label,#commentform input:focus label{transform:translate(0,-1rem);opacity:0;}
 #commentform input,#commentform textarea,#commentform input#submit:focus{width:100%;padding:8px 10px;box-shadow:0 0 0 1px #E6E9ED;background:#fff;font-size:.8rem;line-height:18px;}
 #commentform textarea {max-width:800px;width:100%;height:8rem;}
 #commentform input#submit {cursor:pointer;}
