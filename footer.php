@@ -15,8 +15,6 @@
 	</section>
 </footer>
 
-
-
 <div class="setting_tool iconfont">
     <a class="back2top" style="display:none;"><i class="czs-arrow-up-l"></i></a>
     <a class="sosearch"><i class="czs-search-l"></i></a>
@@ -46,11 +44,11 @@
                 $('.navigation:eq(0)').remove();
                 $(".post_article a").attr("rel" , "external");
                 $("a[rel='external'],a[rel='external nofollow']").attr("target","_blank");
-                $("a.vi").attr("rel" , "");
+                $("a.vi,.gallery a,.attachment a").attr("rel" , "");
 <?php if(!get_theme_mod('biji_setting_viewimage')){ ?>
                 $.viewImage({
-                    'target'  : '.post_article img,.post_article a,a.vi',
-                    'exclude' : '.readerswall img',
+                    'target'  : '.gallery a,.gallery img,.attachment a,.post_article img,.post_article a,a.vi',
+                    'exclude' : '.readerswall img,.gallery a img,.attachment a img',
                     'delay'   : 300
                 });
 <?php } if(!get_theme_mod('biji_setting_lately')){ ?>
