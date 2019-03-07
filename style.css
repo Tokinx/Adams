@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.3.3
+	Version: 1.3.7
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -13,7 +13,7 @@ html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video,input,textarea,button { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
-body{background: #FFF;font:1rem/1.5  "lucida grande", "lucida sans unicode", lucida, helvetica, "PingFang SC", "Hiragino Sans GB", "STHeiti Light", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
+body{background: #FFF;font:1rem/1.5  "Exo 2", "lucida grande", "lucida sans unicode", lucida, helvetica, "PingFang SC", "Hiragino Sans GB", "STHeiti Light", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
 html,body{overflow-x:hidden;-webkit-overflow-scrolling: touch;-overflow-scrolling: touch;}
 html{height:100%;}
 ol, ul { list-style: none; }
@@ -236,19 +236,21 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 #commentform .form-submit{margin:0;}
 #commentform .comment-form-smilies{z-index:9;top:-10px;margin:-15px 0;left:0;padding:0 10px;width:35px;overflow:hidden;white-space: nowrap;transition:.3s;}
 #commentform .comment-form-smilies:hover{width:100%;}
-#commentform p label {position:absolute;right:.5rem;top:.5rem;transition:.3s;z-index:2}
-#commentform textarea:focus,#commentform input:focus {box-shadow:0 0 0 1px #3274ff;position:relative;z-index:1;}
-#commentform p:hover label,#commentform input:focus label{transform:translate(0,-1rem);opacity:0;}
-#commentform input,#commentform textarea,#commentform input#submit:focus{width:100%;padding:8px 10px;box-shadow:0 0 0 1px #E6E9ED;background:#fff;font-size:.8rem;line-height:18px;}
-#commentform input[type='checkbox']{width:12px;height:12px;padding:0;margin-right:10px;position:relative;top:1px;box-shadow:0 0 0 2px #fff inset,0 0 0 1px #E6E9ED;background: none;}
+#commentform textarea:focus,#commentform input:focus,.post_password_form input:focus{box-shadow:0 0 0 1px #3274ff;position:relative;z-index:1;}
+#commentform input,#commentform textarea,#commentform input#submit:focus,.post_password_form input,.post_password_form [type='submit']{width:100%;padding:8px 10px;box-shadow:0 0 0 1px #E6E9ED;background:#fff;font-size:.8rem;margin:6px 0;line-height:18px;}
+#commentform input[type='checkbox']{width:12px;height:12px;padding:0;margin:0 10px 0 0;position:relative;top:1px;box-shadow:0 0 0 2px #fff inset,0 0 0 1px #E6E9ED;background: none;}
 #commentform input[type='checkbox']:checked{background:#03A9F4}
-#commentform p.comment-form-cookies-consent{line-height:12px;}
-#commentform p.comment-form-cookies-consent input[type='checkbox'] + label{top:unset;left:unset;right:unset;transform:translate(0);opacity:0;}
-#commentform p.comment-form-cookies-consent:after{content:'允许浏览器存储您的姓名、邮箱、网站用于下次访问网站发表评论。'}
 #commentform textarea {max-width:800px;width:100%;height:8rem;}
-#commentform input#submit {cursor:pointer;}
-#commentform input#submit:hover {background:#3274ff;box-shadow:0 0 0 1px #3274ff;color:#fff;}
+#commentform input#submit,.post_password_form [type='submit']{cursor:pointer;}
+#commentform input#submit:hover,.post_password_form [type='submit']:hover{background:#3274ff;box-shadow:0 0 0 1px #3274ff;color:#fff;}
+
 #commentform #loading,#commentform #error{margin:10px 0 0 0}
+.post_password_form label{display:block;}
+.post_password_form input{max-width:240px;}
+.post_password_form [type='submit']{margin:1rem auto;max-width:100px;}
+.post_password_form{
+  margin:20% 0 12%;
+}
 
 .pingback{font-size:12px;box-shadow:0 0 0 1px #F5F7FA inset;margin:0 0 1rem;padding:1rem;}
 .pingback p{font-size:12px;color:#AAB2BD;margin:0;}
