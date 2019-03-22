@@ -43,7 +43,7 @@
             adamsOverload: function () {
                 $('.navigation:eq(0)').remove();
                 $(".post_article a").attr("rel" , "external");
-                $("a[rel='external'],a[rel='external nofollow']").attr("target","_blank");
+                $("a[rel='external']:not([href^='#']),a[rel='external nofollow']:not([href^='#'])").attr("target","_blank");
                 $("a.vi,.gallery a,.attachment a").attr("rel" , "");
 <?php if(!get_theme_mod('biji_setting_viewimage')){ ?>
                 $.viewImage({
