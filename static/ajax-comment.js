@@ -1,7 +1,7 @@
 (function ($) {
     
     $(document).ready(function(){
-        $('.infos .donate,.infos .share').click(function(){
+        $('.infos .donate,.infos .share').unbind("click").click(function(){
             if($(this).attr('class')=='donate'){
                 $('.infos').removeClass('share-close');
                 $('.infos').toggleClass('donate-close');
