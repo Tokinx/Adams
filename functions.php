@@ -159,7 +159,7 @@ function dangopress_esc_html($content)
         $content = preg_replace('/<code(.*)>/i',"<code class=\"prettyprint\" \$1>",$content);
     }
     $regex = '/(<code.*?>)(.*?)(<\/code>)/sim';
-    return preg_replace_callback($regex, dangopress_esc_callback, $content);
+    return preg_replace_callback($regex, 'dangopress_esc_callback', $content);
 }
 function dangopress_esc_callback($matches)
 {
