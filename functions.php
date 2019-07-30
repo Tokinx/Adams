@@ -155,9 +155,9 @@ add_filter("mce_buttons_3", "enable_more_buttons");
 // 代码高亮
 function dangopress_esc_html($content)
 {
-    if(!is_feed()||!is_robots) {
-        $content = preg_replace('/<code(.*)>/i',"<code class=\"prettyprint\" \$1>",$content);
-    }
+    // if(!is_feed()||!is_robots) {
+    //     $content = preg_replace('/<code(.*)>/i',"<code class=\"prettyprint\" \$1>",$content);
+    // }
     $regex = '/(<code.*?>)(.*?)(<\/code>)/sim';
     return preg_replace_callback($regex, 'dangopress_esc_callback', $content);
 }

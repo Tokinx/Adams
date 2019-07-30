@@ -25,7 +25,7 @@ blockquote:before,q:before,blockquote:after,q:after{content:'“';color:#CCD1D9;
 blockquote:after,q:after{content:'”';top:initial;left:initial;bottom:-2rem;right:1rem;}
 blockquote p,q p{margin:0!important;padding:0;line-height:1.8rem;overflow:hidden;}
 pre{position:relative;white-space:pre-wrap;word-wrap:break-word;}
-pre code,code{display:block;overflow:auto;font-size:.88rem;max-height: 18rem;padding:2rem;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;line-height:2rem;background:#3C3B3D;}
+pre code,code{display:block;overflow:auto;font-size:.88rem;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;line-height:2rem;background:#3C3B3D;}
 code{display:inline-block;margin:-.36rem 0;padding:0 .36rem;color:#AAB2BD;line-height:1.6rem;}
 
 /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */

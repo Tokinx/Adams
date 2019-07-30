@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="<?php bloginfo('template_url'); ?>/style.css?<?php echo THEME_DB_VERSION;?>" type="text/css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/static/caomei1.2.8/style.css?<?php echo THEME_DB_VERSION;?>" type="text/css" rel="stylesheet">
+    <link href="<?php bloginfo('template_url'); ?>/static/prism/prism.css" type="text/css" rel="stylesheet">
     <?php wp_head(); ?>
     
     <script>
