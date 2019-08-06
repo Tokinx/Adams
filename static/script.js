@@ -11,7 +11,8 @@ var _let = [];
  */
 (function(a){a.extend({lately:function(e){function l(a){a=new Date(a);a=((new Date).getTime()-a.getTime())/1E3/60;var b=a/60,d=b/24,e=d/30,f=e/12,g=Math.floor;return(1<=f?g(f)+c.lang.year:1<=e?g(e)+c.lang.month:1<=d?g(d)+c.lang.day:1<=b?g(b)+c.lang.hour:1<=a?g(a)+c.lang.minute:0<=a?c.lang.second:c.lang.error)+c.lang.ago}var c=a.extend({target:".time",lang:{second:"\u51e0\u79d2",minute:"\u5206\u949f",hour:"\u5c0f\u65f6",day:"\u5929",month:"\u4e2a\u6708",year:"\u5e74",ago:"\u524d",error:"NaN"}},e);e=a(c.target);for(var k=0;k<e.length;k++){var d=a(e[k]),b="";if(a(d).is(":visible")){b=a(d).attr("datetime");var f=a(d).attr("title"),h=a(d).html();if(!b||isNaN(new Date(b=b.replace(/(.*)[a-z](.*)\+(.*)/gi,"$1 $2").replace(/-/g,"/"))))if(f&&!isNaN(new Date(f=f.replace(/-/g,"/"))))b=f;else if(h&&!isNaN(new Date(h=h.replace(/-/g,"/"))))b=h;else break;a(d).html(l(b))}}}})})(jQuery);
 
-
+/**
+/* 中科大的镜像服务好像宕机了，导致主题打开很慢，暂时注释掉这个服务
 (function () {
     var link_element = document.createElement("link"),
         s = document.getElementsByTagName("script")[0];
@@ -20,7 +21,7 @@ var _let = [];
     link_element.type = "text/css";
     s.parentNode.insertBefore(link_element, s);
 })();
-
+*/
 
 (function ($) {
     
