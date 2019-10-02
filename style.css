@@ -152,7 +152,7 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .post_article embed {max-width:100%;margin:10px auto;display:block;}
 .post_article a {text-decoration: underline;}
 .post_article p {margin:4% 0;line-height:2.4rem;}
-.post_article p a,.post_article p a span{padding:0;color:#3274ff;}a
+.post_article p a,.post_article p a span{padding:0;color:#3274ff;}
 .post_article h1,.post_article h2,.post_article h3,.post_article h4,#comments{margin:2rem 0;font-weight:bold;position:relative;}
 .post_article h1 {font-size:1.8rem;line-height:1.8rem;}
 .post_article h2 {font-size:1.6rem;line-height:1.6rem;}
