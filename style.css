@@ -335,6 +335,70 @@ animation-fill-mode: forwards;
 .main-load .post-list .meta:nth-child(8),.commentlist > li:nth-child(8){-webkit-animation-delay:.14s;animation-delay:.14s;}
 .main-load .post-list .meta:nth-child(9),.commentlist > li:nth-child(9){-webkit-animation-delay:.16s;animation-delay:.16s;}
 .main-load .post-list .meta:nth-child(10),.commentlist > li:nth-child(10){-webkit-animation-delay:.18s;animation-delay:.18s;}
+
+/**
+* 12.1 - Captions
+*/
+
+.wp-caption {
+  margin-bottom: 1.75em;
+  max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  /* display: block;
+  margin: 0; */
+}
+
+.wp-caption .wp-caption-text {
+  /* color: #686868;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-style: italic;
+  line-height: 1.6153846154;
+  padding-top: 0.5384615385em; */
+}
+
+.wp-caption .wp-caption-text,
+.gallery-caption{
+  /* font-size: 9.75pt; */
+}
+.wp-caption .wp-caption-text,
+.gallery-caption{
+  /* color: #686868 !important; /* Make sure color schemes don't affect to print */ */
+}
+
+.sticky .posted-on,
+.byline {
+	/* display: none; */
+}
+.screen-reader-text {
+  /* display: none; */
+}
+
+.bypostauthor > article .fn:after {
+	/* -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-family: "Genericons";
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	speak: none;
+	text-align: center;
+	text-decoration: inherit;
+	text-transform: none;
+	vertical-align: top; */
+}
+
+.bypostauthor > article .fn:after {
+	/* content: "\f304";
+	left: 3px;
+	position: relative;
+	top: 5px; */
+}
 @keyframes top-show{
   0%{opacity:0;transform: translateY(20px);}
   100%{opacity:1;}
