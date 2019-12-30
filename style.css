@@ -91,7 +91,7 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .infos .dot-good i[class*='-l'],.infos .dot-good i[class*='-l']{display:inline-block;}
 .infos .dot-good.done i{display:inline-block;}
 .infos .dot-good.done i[class*='-l']{display:none;}
-.infos .donate,.infos .donate a{display:inline-block;float:right;color:#FC6E51;font-size:14px;}
+.infos .donate,.infos .donate a{display:inline-block;color:#FC6E51;font-size:14px;}
 
 .infos .share a i.h,
 .infos .donate a i.h,
@@ -111,7 +111,8 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .infos .donate .window ul li.alipay:after{content:'支付宝';}
 .infos .donate .window ul li img{width:100%;height:100%;}
 .infos.donate-close .donate .window,.infos.share-close .qrcode{-webkit-animation:down-show .3s;animation:down-show .3s;display:block;background:#fff;box-shadow:0 2px 3px rgba(170, 178, 189, 0.4);height:150px;min-width:130px;position:absolute;top:46px;right:20px;}
-.infos .share,.infos .share a{display:inline-block;float:right;margin:0 5px 0 0;color:#2ABA66;font-size:14px;}
+.infos .share{float: left;}
+.infos .share,.infos .share a{display:inline-block;margin:0 5px 0 0;color:#2ABA66;font-size:14px;}
 .infos .share .share-close,.infos.share-close .share .qrcode i{display:block;position:absolute;top:5px;left:0;right:0;}
 .infos.share-close .share a,.infos.donate-close .donate a{box-shadow:0 1px inset;}
 .infos.share-close .share .qrcode i,.infos .donate .window ul li:after{font-size:12px;font-style:normal;background:none;box-shadow:none;top:118px;}
@@ -143,7 +144,7 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .post-list .reade_more{text-align:center;margin:12% 0}
 .post-list .reade_more a,.post-list .reade_more .page-numbers{box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;background:#F5F7FA;padding:10px 5%;border-radius:20px;transition:.3s;}
 .post-list .reade_more a:hover,.post-list .reade_more span.page-numbers{background:#3274ff;color:#fff;padding:10px 10%;}
-.post-list .reade_more .page-numbers,.post-list .reade_more .page-numbers:hover,.post-list .reade_more span.page-numbers{display:inline-block;border-radius:2px;padding:0;background:#fff;margin:0 .6%;padding:1% 2.6%;}
+.post-list .reade_more .page-numbers,.post-list .reade_more .page-numbers:hover,.post-list .reade_more span.page-numbers{display:inline-block;border-radius:2px;background:#fff;margin:0 .6%;padding:1% 2.6%;}
 .post-list .reade_more .page-numbers:hover,.post-list .reade_more span.page-numbers{background:#3274ff;}
 
 /* Connent */
@@ -364,7 +365,7 @@ animation-fill-mode: forwards;
 }
 .wp-caption .wp-caption-text,
 .gallery-caption{
-  /* color: #686868 !important; /* Make sure color schemes don't affect to print */ */
+  /* color: #686868 !important; /* Make sure color schemes don't affect to print */
 }
 
 .sticky .posted-on,
