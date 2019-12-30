@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.3.11
+	Version: 1.3.12
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -56,8 +56,8 @@ a { color: inherit; text-decoration: none; }
 a:hover { color: #3274ff;}
 body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-::-webkit-scrollbar {width: 8px;height: 8px;}
-::-webkit-scrollbar-thumb {background: #656D78;}
+::-webkit-scrollbar {width: 10px;height: 10px;}
+::-webkit-scrollbar-thumb {background-color: #656D78;background-clip: padding-box;border: 3px solid transparent;border-radius:5px;}
 /* Layouts */
 .container {max-width: 780px;width: 96%;margin: 0 auto;padding: 0 2%;position: relative;}
 
@@ -71,16 +71,15 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .header .social li img{display:none;position:absolute;top:60%;padding:5px;left:0;margin-left:-38px;width:100px;}
 .header .social li:hover img{display:block;z-index:1;}
 .header .social li:before{font-size:.92rem;position:relative;}
-.header .social li:hover:before{opacity:.6;}
-.header .social li a{display:block;position:absolute;left:0;top:0;width:1rem;height:1rem;}
+.header .social li a{display:block;left:0;top:0;width:1rem;height:1rem;}
 
 .header .menu{margin:1rem 0;padding:1rem 0;}
-
 .header .menu,.footer .menu,.placard{white-space:nowrap; overflow-y: hidden; -webkit-overflow-scrolling: touch;}
 .header .menu li,.footer .menu li {display:inline-block;margin:0 1rem 0 0;position:relative;line-height: 1rem;}
 .header .menu li:after,.footer .menu li:after{content:'';width:2px;height:2px;background:#AAB2BD;position:absolute;right:-.6rem;top:.5rem;margin:-1px;}
 .header .menu li:last-child:after,.footer .menu li:last-child:after{margin:0;display:none;}
-.current-menu-item a,.current_page_item a,.current-menu-parent a,.current-post-parent a{color:#3274ff;}
+.header .menu li:hover,.current-menu-item,.current_page_item,.current-menu-parent,.current-post-parent{color:#3274ff;}
+.header .header_nav .menu li:before{position: relative;top:1px;left:0;margin-right: 2px;z-index:-1;}
 
 .infos{line-height:3rem;height:3rem;color:#AAB2BD;font-size:.9rem;position:absolute;top:100%;left:0;right:0;background:#fff;}
 .infos .container{z-index: 100;}
@@ -199,10 +198,10 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .comment .comment .comment {margin:0;padding:0;border:0;}
 .comment-body {padding:15px 0;position:relative;}
 .comment .comment .comment-body,.comment .comment .comment > .comment-body.new-comment {margin: 0 0 0 -16px;}
-.comment-body p {font-size:.8rem;clear:both;line-height:22px;margin:0 0 0 55px;}
+.comment-body p,.comment-awaiting-moderation {font-size:.8rem;clear:both;line-height:22px;margin:0 0 0 55px;}
 .comment-body pre{margin:1rem 0 0 2rem;}
 .comment-body pre code{max-height:14rem;padding:1rem;}
-.comment .comment .comment-body p {margin:0 0 0 40px;}
+.comment .comment .comment-body p,.comment-awaiting-moderation {margin:0 0 0 40px;}
 .comment .comment .comment-body img{width:100%;}
 .comment br,.pingback .reply,.comment-meta a.comment-edit-link{display:none;}
 .comment .comment-author {font-size:.8rem;margin:0 0 20px 0;line-height:26px;}
@@ -437,3 +436,15 @@ animation-fill-mode: forwards;
   .post-list .meta main .thumb{width:120px;height:100px;}
   .post-list .meta main .thumb:after,.infos.fixed .fields,.infos.fixed .fixed-menus,.header .social{display:none;}
 }
+/* 暴力黑暗模式 */
+/*
+body{
+  translate:.3s;
+  filter: invert(100%);
+  background:#000;
+  height:100%;
+}
+img,code,.socials > div > a,.socials > div > div i{
+  filter: invert(1);
+}
+*/
