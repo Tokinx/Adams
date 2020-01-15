@@ -15,7 +15,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
 body{background: #FFF;font:1rem/1.5  "Exo 2", "lucida grande", "lucida sans unicode", lucida, helvetica, "PingFang SC", "Hiragino Sans GB", "STHeiti Light", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
 html,body{overflow-x:hidden;-webkit-overflow-scrolling: touch;-overflow-scrolling: touch;}
-html{height:100%;}
+html{/* height:100%; */}
 ol, ul { list-style: none; }
 input,textarea,button {outline:none;-webkit-appearance:none;}
 blockquote,q {quotes:none;}
@@ -25,7 +25,7 @@ blockquote:before,q:before,blockquote:after,q:after{content:'“';color:#CCD1D9;
 blockquote:after,q:after{content:'”';top:initial;left:initial;bottom:-2rem;right:1rem;}
 blockquote p,q p{margin:0!important;padding:0;line-height:1.8rem;overflow:hidden;}
 pre{position:relative;white-space:pre-wrap;word-wrap:break-word;}
-pre code,code{display:block;overflow:auto;font-size:.88rem;max-height: 18rem;padding:2rem;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;line-height:2rem;background:#3C3B3D;}
+pre code,code{display:block;overflow:auto;font-size:.88rem;max-height: 18rem;padding: 1rem;box-shadow: 0 0 0 1px #f3f3f3;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;background: #fafafa;border-radius: 3px;text-shadow: 0 -1px 0 #fff, 0 0 10px;}
 code{display:inline-block;margin:-.36rem 0;padding:0 .36rem;color:#AAB2BD;line-height:1.6rem;}
 
 /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
@@ -71,7 +71,7 @@ body { line-height: 1; background: #FFF; color:#656D78; -webkit-font-smoothing: 
 .header .social li img{display:none;position:absolute;top:60%;padding:5px;left:0;margin-left:-38px;width:100px;}
 .header .social li:hover img{display:block;z-index:1;}
 .header .social li:before{font-size:.92rem;position:relative;}
-.header .social li a{display:block;left:0;top:0;width:1rem;height:1rem;}
+.header .social li a{display:block;left:0;top:0;width:1rem;height:1rem;position: absolute;}
 
 .header .menu{margin:1rem 0;padding:1rem 0;}
 .header .menu,.footer .menu,.placard{white-space:nowrap; overflow-y: hidden; -webkit-overflow-scrolling: touch;}
@@ -151,9 +151,9 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .post_article img {max-width:100%;display:block;margin:auto;height:auto;}
 .post_article embed {max-width:100%;margin:10px auto;display:block;}
 .post_article a {text-decoration: underline;}
-.post_article p {margin:4% 0;line-height:2.4rem;}
+.post_article p {margin: 3% 0;line-height: 2rem;}
 .post_article p a,.post_article p a span{padding:0;color:#3274ff;}
-.post_article h1,.post_article h2,.post_article h3,.post_article h4,#comments{margin:2rem 0;font-weight:bold;position:relative;}
+.post_article h1,.post_article h2,.post_article h3,.post_article h4,#comments{margin: 2rem 0;font-weight:bold;position:relative;}
 .post_article h1 {font-size:1.8rem;line-height:1.8rem;}
 .post_article h2 {font-size:1.6rem;line-height:1.6rem;}
 .post_article h3 {font-size:1.4rem;line-height:1.4rem;}
@@ -203,7 +203,7 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 .comment-body pre{margin:1rem 0 0 2rem;}
 .comment-body pre code{max-height:14rem;padding:1rem;}
 .comment .comment .comment-body p,.comment-awaiting-moderation {margin:0 0 0 40px;}
-.comment .comment .comment-body img{width:100%;}
+.comment .comment .comment-body img{max-width: 100%;}
 .comment br,.pingback .reply,.comment-meta a.comment-edit-link{display:none;}
 .comment .comment-author {font-size:.8rem;margin:0 0 20px 0;line-height:26px;}
 .comment .comment-author .avatar,.comment .comment-author:before{float:left;width:42px;height:42px;margin:0 12px 0 0;position:relative;background:#fff;padding:2px;border:1px solid #E6E9ED;border-radius:100%;}
