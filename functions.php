@@ -6,21 +6,12 @@
  * @subpackage Adams
  */
 if ( !defined( 'THEME_NAME' ) ) define( 'THEME_NAME', 'Adams' );
-if ( !defined( 'THEME_DB_VERSION' ) ) define( 'THEME_DB_VERSION', 'v1.2.5' );
+if ( !defined( 'THEME_DB_VERSION' ) ) define( 'THEME_DB_VERSION', 'v1.4.2' );
+if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
+	wp_die('请升级到4.4以上版本');
+}
 
 require( get_template_directory() . '/inc/core.de.php' );
-
-// add_filter( 'comment_form_defaults','xxx');
-// function xxx($default) {
-//     $default['comment_field'] .= '<pre>'.htmlentities(json_encode($default)).'</pre>';
-//     return $default;
-// }
-
-// function biji_sc_download($atts, $content=null, $code="") {
-//     $return = '<a href="' . $atts['href'] . '" class="download">' . $content . '</a>';
-//     return $return;
-// }
-// add_shortcode('dl', 'biji_sc_download');
 
 /**
  * 挂载脚本
@@ -307,34 +298,63 @@ add_filter( 'template_include', 'biji_404_template' );
 
 /**
  * AJAX 提交评论
- * @see wp_handle_comment_submission()
+ * by：https://fatesinger.com/jquery-ajax-comments.html
  **/
-function biji_ajax_comment_submission() {
-    global $comment, $user;
-    $comment = wp_handle_comment_submission( wp_unslash( $_POST ) );
-    if ( is_wp_error( $comment ) ) {
-        header('HTTP/1.1 301 Moved Permanently');
-        echo $comment->get_error_message();
+if(!function_exists('biji_ajax_comment_scripts')) :
+    function biji_ajax_comment_scripts(){
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
+        wp_localize_script( 'ajax-comment', 'ajaxcomment', array(
+            'ajax_url'   => admin_url('admin-ajax.php'),
+            'order' => get_option('comment_order'),
+            'formpostion' => 'bottom', //默认为bottom，如果你的表单在顶部则设置为top。
+        ) );
+    }
+endif;
+
+if(!function_exists('biji_ajax_comment_err')) :
+    function biji_ajax_comment_err($a) {
+        header('HTTP/1.0 500 Internal Server Error');
+        header('Content-Type: text/plain;charset=UTF-8');
+        echo $a;
         exit;
     }
-    $user = wp_get_current_user();
-    do_action( 'set_comment_cookies', $comment, $user );
-    ?>
-    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-        <div id="comment-<?php comment_ID(); ?>" class="comment-body new-comment" >
-            <div class="comment-author vcard">
-                <?php echo get_avatar($comment,$size='64'); ?>
-                <?php printf( __( '<cite class="fn">%s</cite> <span class="says">说道：</span>'), get_comment_author_link() ); ?>
-            </div>
-            <div class="comment-meta commentmetadata" style="right:8px;"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s at %2$s' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)' ), ' ' ); ?></div>
-            <p><?php comment_text(); ?></p>
-			<div class="reply">提交成功</div>
-        </div>
-    </li>
-    <?php die; }
-add_action( 'wp_ajax_comment-submission',        'biji_ajax_comment_submission' );
-add_action( 'wp_ajax_nopriv_comment-submission', 'biji_ajax_comment_submission' );
+endif;
 
+if(!function_exists('biji_ajax_comment_callback')) :
+    function biji_ajax_comment_callback(){
+        $comment = wp_handle_comment_submission( wp_unslash( $_POST ) );
+        if ( is_wp_error( $comment ) ) {
+            $data = $comment->get_error_data();
+            if ( ! empty( $data ) ) {
+            	biji_ajax_comment_err($comment->get_error_message());
+            } else {
+                exit;
+            }
+        }
+        $user = wp_get_current_user();
+        do_action('set_comment_cookies', $comment, $user);
+        $GLOBALS['comment'] = $comment;
+        ?>
+        <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+            <div id="comment-<?php comment_ID(); ?>" class="comment-body new-comment" >
+                <div class="comment-author vcard">
+                    <?php echo get_avatar($comment,$size='64'); ?>
+                    <?php printf( __( '<cite class="fn">%s</cite> <span class="says">说道：</span>'), get_comment_author_link() ); ?>
+                </div>
+                <div class="comment-meta commentmetadata" style="right:8px;"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s at %2$s' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)' ), ' ' ); ?></div>
+                <p><?php comment_text(); ?></p>
+                <div class="reply">提交成功</div>
+            </div>
+        </li>
+        <?php die();
+    }
+endif;
+
+add_action( 'wp_enqueue_scripts', 'biji_ajax_comment_scripts' );
+add_action('wp_ajax_nopriv_ajax_comment', 'biji_ajax_comment_callback');
+add_action('wp_ajax_ajax_comment', 'biji_ajax_comment_callback');
 /**
  * Theme Update Checker Library 1.2 ／ 主题更新推送
  * http://w-shadow.com/

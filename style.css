@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.3.12
+	Version: 1.4.2
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -25,8 +25,9 @@ blockquote:before,q:before,blockquote:after,q:after{content:'“';color:#CCD1D9;
 blockquote:after,q:after{content:'”';top:initial;left:initial;bottom:-2rem;right:1rem;}
 blockquote p,q p{margin:0!important;padding:0;line-height:1.8rem;overflow:hidden;}
 pre{position:relative;white-space:pre-wrap;word-wrap:break-word;}
-pre code,code{display:block;overflow:auto;font-size:.88rem;max-height: 18rem;padding: 1rem;box-shadow: 0 0 0 1px #f3f3f3;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;background: #fafafa;border-radius: 3px;text-shadow: 0 -1px 0 #fff, 0 0 10px;}
+code{overflow:auto;font-size:.88rem;max-height: 18rem;border-radius: 3px;background: rgba(152, 152, 152, 0.06);box-shadow: 0 0 0 1px rgba(152, 152, 152, 0.1);}
 code{display:inline-block;margin:-.36rem 0;padding:0 .36rem;color:#AAB2BD;line-height:1.6rem;}
+pre code{display:block;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;padding: 1rem;}
 
 /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
 .prettyprint{font-family:Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace;border:0 !important;}
@@ -237,14 +238,16 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
 #commentform .comment-form-smilies{z-index:9;top:-10px;margin:-15px 0;left:0;padding:0 10px;width:35px;overflow:hidden;white-space: nowrap;transition:.3s;}
 #commentform .comment-form-smilies:hover{width:100%;}
 #commentform textarea:focus,#commentform input:focus,.post_password_form input:focus{box-shadow:0 0 0 1px #3274ff;position:relative;z-index:1;}
-#commentform input,#commentform textarea,#commentform input#submit:focus,.post_password_form input,.post_password_form [type='submit']{width:100%;padding:8px 10px;box-shadow:0 0 0 1px #E6E9ED;background:#fff;font-size:.8rem;margin:6px 0;line-height:18px;}
+#commentform input,#commentform textarea,#commentform input#submit:focus,.post_password_form input,.post_password_form [type='submit']{width:100%;padding:8px 10px;box-shadow:0 0 0 1px rgba(152,152,152,.2);background:#fff;font-size:.8rem;margin:6px 0;line-height:18px;border:none!important;}
 #commentform input[type='checkbox']{width:12px;height:12px;padding:0;margin:0 10px 0 0;position:relative;top:1px;box-shadow:0 0 0 2px #fff inset,0 0 0 1px #E6E9ED;background: none;}
 #commentform input[type='checkbox']:checked{background:#03A9F4}
 #commentform textarea {max-width:800px;width:100%;height:8rem;}
 #commentform input#submit,.post_password_form [type='submit']{cursor:pointer;}
 #commentform input#submit:hover,.post_password_form [type='submit']:hover{background:#3274ff;box-shadow:0 0 0 1px #3274ff;color:#fff;}
 
-#commentform #loading,#commentform #error{margin:10px 0 0 0}
+.butterBar{position:fixed;z-index:102;left:0;right:0;top:0;height: 3rem;background:#fff;animation: 300ms down-show;}
+.butterBar--center{display:flex;justify-content: center;align-items: center;}
+
 .post_password_form label{display:block;}
 .post_password_form input{max-width:240px;}
 .post_password_form [type='submit']{margin:1rem auto;max-width:100px;}
@@ -252,7 +255,7 @@ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
   margin:20% 0 12%;
 }
 
-.pingback{font-size:12px;box-shadow:0 0 0 1px #F5F7FA inset;margin:0 0 1rem;padding:1rem;}
+.pingback{font-size:12px;box-shadow:0 0 0 1px rgba(152, 152, 152, 0.1) inset;margin:0 0 1rem;padding:1rem;}
 .pingback p{font-size:12px;color:#AAB2BD;margin:0;}
 .pingback .fn a{color:#434A54}
 .pingback .comment-meta a{left:initial;right:0;top:1rem;}
@@ -317,7 +320,7 @@ ul.links li a{display:block;padding:12px 5px;height:100%;text-decoration:none;po
 ul.links li .bg{background-position: center;position: absolute;top: 0;left: 0;height: 100%;width: 100%;background-size: cover;filter: blur(20px) brightness(110%) saturate(200%) contrast(120%);z-index: -2;opacity:0;transition:.6s;}
 ul.links li:hover .bg{opacity:.32}
 
-.main-load .post-list .meta,.main-load,.comments,.commentlist > li{/*animation:.5s forwards 1 top-show;*/
+.main-load .post-list .meta,.main-load,.comments{/*animation:.5s forwards 1 top-show;*/
 opacity:0;
 -webkit-animation-name: top-show;
 -webkit-animation-duration: .6s;
@@ -326,15 +329,15 @@ animation-name: top-show;
 animation-duration: .6s;
 animation-fill-mode: forwards;
 }
-.main-load .post-list .meta:nth-child(2),.comments,.commentlist > li:nth-child(2){-webkit-animation-delay:.2s;animation-delay:.2s;}
-.main-load .post-list .meta:nth-child(3),.commentlist > li:nth-child(3){-webkit-animation-delay:.4s;animation-delay:.4s;}
-.main-load .post-list .meta:nth-child(4),.commentlist > li:nth-child(4){-webkit-animation-delay:.6s;animation-delay:.6s;}
-.main-load .post-list .meta:nth-child(5),.commentlist > li:nth-child(5){-webkit-animation-delay:.8s;animation-delay:.8s;}
-.main-load .post-list .meta:nth-child(6),.commentlist > li:nth-child(6){-webkit-animation-delay:.10s;animation-delay:.10s;}
-.main-load .post-list .meta:nth-child(7),.commentlist > li:nth-child(7){-webkit-animation-delay:.12s;animation-delay:.12s;}
-.main-load .post-list .meta:nth-child(8),.commentlist > li:nth-child(8){-webkit-animation-delay:.14s;animation-delay:.14s;}
-.main-load .post-list .meta:nth-child(9),.commentlist > li:nth-child(9){-webkit-animation-delay:.16s;animation-delay:.16s;}
-.main-load .post-list .meta:nth-child(10),.commentlist > li:nth-child(10){-webkit-animation-delay:.18s;animation-delay:.18s;}
+.main-load .post-list .meta:nth-child(2){-webkit-animation-delay:.2s;animation-delay:.2s;}
+.main-load .post-list .meta:nth-child(3){-webkit-animation-delay:.4s;animation-delay:.4s;}
+.main-load .post-list .meta:nth-child(4){-webkit-animation-delay:.6s;animation-delay:.6s;}
+.main-load .post-list .meta:nth-child(5){-webkit-animation-delay:.8s;animation-delay:.8s;}
+.main-load .post-list .meta:nth-child(6){-webkit-animation-delay:.10s;animation-delay:.10s;}
+.main-load .post-list .meta:nth-child(7){-webkit-animation-delay:.12s;animation-delay:.12s;}
+.main-load .post-list .meta:nth-child(8){-webkit-animation-delay:.14s;animation-delay:.14s;}
+.main-load .post-list .meta:nth-child(9){-webkit-animation-delay:.16s;animation-delay:.16s;}
+.main-load .post-list .meta:nth-child(10){-webkit-animation-delay:.18s;animation-delay:.18s;}
 
 /**
 * 12.1 - Captions
@@ -437,15 +440,3 @@ animation-fill-mode: forwards;
   .post-list .meta main .thumb{width:120px;height:100px;}
   .post-list .meta main .thumb:after,.infos.fixed .fields,.infos.fixed .fixed-menus,.header .social{display:none;}
 }
-/* 暴力黑暗模式 */
-/*
-body{
-  translate:.3s;
-  filter: invert(100%);
-  background:#000;
-  height:100%;
-}
-img,code,.socials > div > a,.socials > div > div i{
-  filter: invert(1);
-}
-*/
