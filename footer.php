@@ -1,18 +1,18 @@
 <footer class="footer">
-	<section class="container">
+    <section class="container">
         <?php wp_nav_menu(
             array(
                 'container' => false,
                 'theme_location' => 'footer_nav',
                 'depth' => 0
             )
-        );?>
+        ); ?>
         <p>
-            <span class='left'><?php echo '&copy; '.date('Y').' <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a>';
-                 if(get_option('zh_cn_l10n_icp_num')) echo " . " . get_option('zh_cn_l10n_icp_num');?></span>
+            <span class='left'><?php echo '&copy; ' . date('Y') . ' <a href="' . get_bloginfo('url') . '">' . get_bloginfo('name') . '</a>';
+                if (get_option('zh_cn_l10n_icp_num')) echo " . " . get_option('zh_cn_l10n_icp_num'); ?></span>
             <span class='right'>Theme by <a href="https://biji.io" target="_blank">Adams</a></span>
         </p>
-	</section>
+    </section>
 </footer>
 
 <div class="setting_tool iconfont">
@@ -36,45 +36,45 @@
     </div>
 </div>
 
-<?php wp_footer();?>
+<?php wp_footer(); ?>
 <script data-no-instant>
     (function ($) {
         $.extend({
             adamsOverload: function () {
                 $('.navigation:eq(0)').remove();
-                $(".post_article a").attr("rel" , "external");
-                $("a[rel='external']:not([href^='#']),a[rel='external nofollow']:not([href^='#'])").attr("target","_blank");
-                $("a.vi,.gallery a,.attachment a").attr("rel" , "");
-<?php if(!get_theme_mod('biji_setting_viewimage')){ ?>
+                $(".post_article a").attr("rel", "external");
+                $("a[rel='external']:not([href^='#']),a[rel='external nofollow']:not([href^='#'])").attr("target", "_blank");
+                $("a.vi,.gallery a,.attachment a").attr("rel", "");
+                <?php if(!get_theme_mod('biji_setting_viewimage')){ ?>
                 $.viewImage({
-                    'target'  : '.gallery a,.gallery img,.attachment a,.post_article img,.post_article a,a.vi',
-                    'exclude' : '.readerswall img,.gallery a img,.attachment a img',
-                    'delay'   : 300
+                    'target': '.gallery a,.gallery img,.attachment a,.post_article img,.post_article a,a.vi',
+                    'exclude': '.readerswall img,.gallery a img,.attachment a img',
+                    'delay': 300
                 });
-<?php } if(!get_theme_mod('biji_setting_lately')){ ?>
+                <?php } if(!get_theme_mod('biji_setting_lately')){ ?>
                 $.lately({
-                    'target' : '.commentmetadata a,.infos time,.post-list time'
+                    'target': '.commentmetadata a,.infos time,.post-list time'
                 });
-<?php }?>
+                <?php }?>
                 prettyPrint();
-                
-                $('ul.links li a').each(function(){
-                    if($(this).parent().find('.bg').length==0){
-                        $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain='+$(this).attr("href")+')"></div>')
+
+                $('ul.links li a').each(function () {
+                    if ($(this).parent().find('.bg').length == 0) {
+                        $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain=' + $(this).attr("href") + ')"></div>')
                     }
                 });
             }
         });
     })(jQuery);
-<?php if(get_theme_mod('biji_setting_footInfo')){ 
+    <?php if (get_theme_mod('biji_setting_footInfo')) {
         echo get_theme_mod('biji_setting_footInfo') . "\n";
     }
     if(!get_theme_mod('biji_setting_pjax')){ ?>
-    InstantClick.on('change', function(isInitialLoad) {
+    InstantClick.on('change', function (isInitialLoad) {
         jQuery.adamsOverload();
         if (isInitialLoad === false) {
             // support MathJax
-            if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             // support google code prettify
             if (typeof prettyPrint !== 'undefined') prettyPrint();
             // support 百度统计
@@ -83,20 +83,20 @@
             if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
         }
     });
-    InstantClick.on('wait', function() {
+    InstantClick.on('wait', function () {
         // pjax href click
     });
-    InstantClick.on('fetch', function() {
+    InstantClick.on('fetch', function () {
         // pjax begin
     });
-    InstantClick.on('receive', function() {
+    InstantClick.on('receive', function () {
         // pjax end
     });
     InstantClick.init('mousedown');
-<?php } else {?>
+    <?php } else {?>
     jQuery.adamsOverload();
-<?php }?>
+    <?php }?>
 </script>
-<!--网站效率：<?php timer_stop(4);?>秒内查询了<?=get_num_queries();?>次数据库-->
+<!--网站效率：<?php timer_stop(4); ?>秒内查询了<?= get_num_queries(); ?>次数据库-->
 </body>
 </html>
