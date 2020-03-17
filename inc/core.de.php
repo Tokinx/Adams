@@ -145,12 +145,12 @@ function theme_customize_register($wp_customize)
         'priority' => 102
     ));
     $wp_customize->add_setting('biji_pay_img_alipay', array(
-        'default' => '',
+        'default' => get_option('biji_pay_img_alipay'),
         'transport' => 'postMessage',
         'type' => 'option'
     ));
     $wp_customize->add_setting('biji_pay_img_wexpay', array(
-        'default' => '',
+        'default' => get_option('biji_pay_img_wexpay'),
         'transport' => 'postMessage',
         'type' => 'option'
     ));
