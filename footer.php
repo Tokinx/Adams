@@ -17,6 +17,9 @@
 
 <div class="setting_tool iconfont">
     <a class="back2top" style="display:none;"><i class="czs-arrow-up-l"></i></a>
+    <?php if (!is_home() && !is_front_page()) { ?>
+        <a class="home" href="<?php bloginfo('url'); ?>"><i class="czs-home-l"></i></a>
+    <?php } ?>
     <a class="sosearch"><i class="czs-search-l"></i></a>
     <a class="socolor"><i class="czs-clothes-l"></i></a>
     <div class="s">
