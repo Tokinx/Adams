@@ -58,14 +58,6 @@
                 $.lately({
                     'target': '.commentmetadata a,.infos time,.post-list time'
                 });
-                <?php } if(get_theme_mod('biji_setting_auto_mode')){ ?>
-                let mode = getComputedStyle(document.documentElement).getPropertyValue('content');
-                if (mode.indexOf('dark') > -1 && !$('body').is('.night')) {
-                    $('.setting_tool .c ul li.night').click()
-                }
-                if (mode.indexOf('light') > -1 && !$('body').is('.undefined')) {
-                    $('.setting_tool .c ul li.undefined').click()
-                }
                 <?php }?>
 
                 prettyPrint();

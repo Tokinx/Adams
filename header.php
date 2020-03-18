@@ -9,6 +9,17 @@
 </head>
 <body>
 <script>
+    <?php if(get_theme_mod('biji_setting_auto_mode')){ ?>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        let mode = getComputedStyle(document.documentElement).getPropertyValue('content');
+        if (mode.indexOf('dark') > -1 && !$('body').is('.night')) {
+            $('.setting_tool .c ul li.night').click()
+        }
+        if (mode.indexOf('light') > -1 && !$('body').is('.undefined')) {
+            $('.setting_tool .c ul li.undefined').click()
+        }
+    });
+    <?php } ?>
     $("body").removeClass().addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
 </script>
 <!-- Header -->
