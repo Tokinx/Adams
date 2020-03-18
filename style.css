@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.4.11
+	Version: 1.4.12
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -135,12 +135,7 @@ body.serif{font-family:serif;}
 .post-list .meta header h2{font-size: 1.4rem;line-height:1.4rem;color:#434A54;position:relative;display:inline-block;font-weight:bolder;transition: 300ms;}
 .post-list .meta header h2:hover{color:#3274ff;}
 .post-list .meta main {font-size:1rem;margin:2rem 0}
-.post-list .meta main .thumb{float:right;position:relative;margin:0 0 0 2%;width:180px;height:140px;border: 1px solid rgba(0,0,0,.05);background-color: #f0f0f0;background-position: 50%;background-size: cover;background-origin: border-box;}
-.post-list .meta main .thumb:after{content:'';position:absolute;top:8px;bottom:0;left:8px;right:0;width:10px;height:10px;border-radius:10px;background:#fff;
-    box-shadow:0 0 0 1px rgba(0, 0, 0, 0.2),
-    0 112px 0 #fff,0 112px 0 1px rgba(0, 0, 0, 0.2),
-    152px 112px 0 #fff,152px 112px 0 1px rgba(0, 0, 0, 0.2),
-    152px 0 0 #fff,152px 0 0 1px rgba(0, 0, 0, 0.2);}
+.post-list .meta main .thumb{float:right;border-radius: 2px;position:relative;margin: 0 0 0 2%;width:180px;height: 132px;border: 1px solid rgba(0,0,0,.05);background-color: #f0f0f0;background-position: center;background-size: cover;background-origin: border-box;}
 .post-list .meta footer span{color:#AAB2BD;font-size:90%}
 .post-list .meta footer span.hr{display:inline-block;width:2px;height:2px;background:#AAB2BD;margin:4px 1rem;}
 
