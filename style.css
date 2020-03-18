@@ -370,7 +370,7 @@ ul.links li:hover .bg{opacity:.32}
     100%{opacity:1;}
 }
 
-@media (min-width: 42rem){
+@media (max-width: 42rem){
     .post-list .meta main .thumb{width:120px;height:100px;}
     .post-list .meta main .thumb:after,.infos.fixed .fields,.infos.fixed .fixed-menus,.header .social{display:none;}
 }
