@@ -66,6 +66,9 @@ function theme_customize_register($wp_customize)
     $wp_customize->add_setting('biji_setting_lately', array(
         'default' => '',
     ));
+    $wp_customize->add_setting('biji_setting_auto_mode', array(
+        'default' => '',
+    ));
     $wp_customize->add_setting('biji_setting_thumb', array(
         'default' => '',
     ));
@@ -105,6 +108,11 @@ function theme_customize_register($wp_customize)
     ));
     $wp_customize->add_control('biji_setting_lately', array(
         'label' => '关闭Timeago',
+        'section' => 'biji_setting',
+        'type' => 'checkbox'
+    ));
+    $wp_customize->add_control('biji_setting_auto_mode', array(
+        'label' => '自动夜间模式',
         'section' => 'biji_setting',
         'type' => 'checkbox'
     ));
