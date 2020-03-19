@@ -59,6 +59,7 @@
                     'target': '.commentmetadata a,.infos time,.post-list time'
                 });
                 <?php }?>
+
                 prettyPrint();
 
                 $('ul.links li a').each(function () {
