@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.4.14
+	Version: 1.4.17
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -71,7 +71,7 @@ body.serif{font-family:serif;}
 .header .social ul{margin:0;padding:5px 0;overflow:visible;}
 .header .social li {display:inline-block;font-size:0;position:relative;}
 .header .social li img{display:none;position:absolute;top:60%;padding:5px;left:0;margin-left:-38px;width:100px;}
-.header .social li:hover img{display:block;z-index:1;}
+.header .social li:hover img{display:block;z-index:99;}
 .header .social li:before{font-size:.92rem;position:relative;}
 .header .social li a{display:block;left:0;top:0;width:1rem;height:1rem;position: absolute;}
 
@@ -237,7 +237,7 @@ body.serif{font-family:serif;}
 #commentform textarea:focus,#commentform input:focus,.post_password_form input:focus{box-shadow:0 0 0 1px #3274ff;position:relative;z-index:1;}
 #commentform input,#commentform textarea,#commentform input#submit:focus,.post_password_form input,.post_password_form [type='submit']{width:100%;padding:8px 10px;box-shadow:0 0 0 1px rgba(152,152,152,.2);background:#fff;font-size:.8rem;margin:6px 0;line-height:18px;border:none!important;transition: 300ms;}
 #commentform input[type='checkbox']{width:12px;height:12px;padding:0;margin:0 10px 0 0;position:relative;top:1px;box-shadow:0 0 0 2px #fff inset,0 0 0 1px #E6E9ED;background: none;}
-#commentform input[type='checkbox']:checked{background:#03A9F4}
+#commentform input[type='checkbox']:checked{background:#3274ff}
 #commentform textarea {max-width:800px;width:100%;height:8rem;}
 #commentform input#submit,.post_password_form [type='submit']{cursor:pointer;}
 #commentform input#submit:hover,.post_password_form [type='submit']:hover{background:#3274ff;box-shadow:0 0 0 1px #3274ff;color:#fff;}
@@ -260,12 +260,16 @@ body.serif{font-family:serif;}
 .pingback .comment-author span{font-size:0;}
 .pingback .comment-author span:before{content:' - Refer to this article：';color:#E6E9ED;font-size:12px;}
 
+.tags{display:flex;margin:5% 0 2%;}
+.tags li a{background-color:rgba(136, 136, 136, 0.1);padding:4px 15px;margin-right:10px;border-radius: 15px;font-size:14px;}
+
+
 /* Navigat */
 .navigation {text-align:center;overflow:hidden;margin:3% 0;}
 .navigation a{font-size:.8rem;margin:0 10px;}
 .navigation li{float:none;display:inline-block;margin:0;}
 
-.nearbypost{letter-spacing:-.8rem;padding:1rem 0;margin:7% 0;font-size:.96rem;box-shadow:0 1px 0 #E6E9ED,0 -1px 0 #E6E9ED;/* overflow: hidden; */}
+.nearbypost{letter-spacing:-.8rem;padding:1rem 0;margin:0 0 7%;font-size:.96rem;box-shadow:0 1px 0 #E6E9ED,0 -1px 0 #E6E9ED;/* overflow: hidden; */}
 .nearbypost div{float:none;margin:auto;display:inline-block;width:50%;letter-spacing:.06rem;line-height:1.08rem;position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .nearbypost div a:before{content:'« '}
 .nearbypost div.alignright {box-shadow:-1px 0 0 #E6E9ED;text-align:right;padding: 0 1rem;}
