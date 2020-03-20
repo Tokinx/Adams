@@ -6,7 +6,9 @@
             the_content();
         }; ?>
     </article>
-
+    <ul class="tags">
+        <?php the_tags('<li>', '</li><li>', '</li>') ?>
+    </ul>
     <nav class="nearbypost">
         <div class="alignleft"><?php previous_post_link('%link'); ?></div>
         <div class="alignright"><?php next_post_link('%link'); ?></div>
