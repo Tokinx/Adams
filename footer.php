@@ -43,7 +43,7 @@
 <script data-no-instant>
     (function ($) {
         <?php if ( is_user_logged_in() ) { ?>
-        $('#wpadminbar').attr('data-no-instant','')
+        $('#wpadminbar').attr('data-no-instant', '')
         <?php } ?>
         $.extend({
             adamsOverload: function () {
@@ -70,6 +70,13 @@
                         $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain=' + $(this).attr("href") + ')"></div>')
                     }
                 });
+
+                // * Safari
+                if (navigator.vendor.indexOf("Apple") > -1) {
+                    $("[srcset]").each((index, img) => {
+                        img.outerHTML = img.outerHTML;
+                    });
+                }
             }
         });
     })(jQuery);
