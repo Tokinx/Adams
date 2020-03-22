@@ -20,7 +20,7 @@
         }
     });
     <?php } ?>
-    $("body").removeClass().addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
+    $("body").addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
 </script>
 <!-- Header -->
 <header class="header">
