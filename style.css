@@ -71,7 +71,7 @@ body.serif{font-family:serif;}
 .header .social ul{margin:0;padding:5px 0;overflow:visible;}
 .header .social li {display:inline-block;font-size:0;position:relative;}
 .header .social li img{display:none;position:absolute;top:60%;padding:5px;left:0;margin-left:-38px;width:100px;}
-.header .social li:hover img{display:block;z-index:99;}
+.header .social li:hover img{display:block;z-index:999;}
 .header .social li:before{font-size:.92rem;position:relative;}
 .header .social li a{display:block;left:0;top:0;width:1rem;height:1rem;position: absolute;}
 
