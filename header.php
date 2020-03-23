@@ -20,13 +20,13 @@
         }
     });
     <?php } ?>
-    $("body").removeClass().addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
+    $("body").addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
 </script>
 <!-- Header -->
 <header class="header">
     <section class="container">
         <hgroup itemscope itemtype="https://schema.org/WPHeader">
-            <h1 class="fullname"><?php (is_single() || is_page()) ? the_title() : bloginfo('name'); ?></h1>
+            <h1 class="fullname"><?php (!is_home()) ? wp_title("") : bloginfo('name'); ?></h1>
         </hgroup>
         <?php
         wp_nav_menu(
