@@ -1,5 +1,4 @@
 (function ($) {
-
     $(document).ready(function () {
         $('.infos .donate,.infos .share').unbind("click").click(function () {
             if ($(this).attr('class') == 'donate') {
@@ -41,7 +40,7 @@
         var __cancel = $('#cancel-comment-reply-link'),
             __cancel_text = __cancel.text(),
             __list = 'commentlist';//your comment wrapprer
-        $(document).on("submit", "#commentform", function () {
+        $(document).off().on("submit", "#commentform", function () {
             $.ajax({
                 url: ajaxcomment.ajax_url,
                 data: $(this).serialize() + "&action=ajax_comment",

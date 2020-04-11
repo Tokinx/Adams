@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.4.19
+	Version: 1.4.20
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -57,14 +57,25 @@ a { color: inherit; text-decoration: none; }
 a:hover { color: #3274ff;}
 body {line-height: 1;background: #FFF;color:#656D78;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 body.serif{font-family:serif;}
-
+sub, sup {
+    position: relative;
+    font-size: 0.8rem;
+    line-height: 0;
+    vertical-align: baseline;
+}
+sub {
+    bottom: -.5rem;
+}
+sup {
+    top: -.5rem;
+}
 ::-webkit-scrollbar {width: 10px;height: 10px;}
 ::-webkit-scrollbar-thumb {background-color: #656D78;background-clip: padding-box;border: 3px solid transparent;border-radius:5px;}
 /* Layouts */
 .container {max-width: 780px;width: 96%;margin: 0 auto;padding: 0 2%;position: relative;}
 
 /* Header */
-.header{margin: 0 0 6rem;padding:4rem 0 2rem 0;position:relative;color:#656D78;font-size:.96rem;}
+.header{margin: 0 0 6rem;padding:4rem 0 2rem 0;position:relative;color:#656D78;font-size:.96rem;line-height: 1.5;}
 .header h1 {margin: 0;font-size: 1.5rem;font-weight:bold;color:#434a54;display:inline-block;position:relative;z-index:1;}
 .header > .container > div.menu{display:none;}
 .header .social {position:absolute;right:0;top:0;}
