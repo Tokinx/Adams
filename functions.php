@@ -6,7 +6,7 @@
  * @subpackage Adams
  */
 if (!defined('THEME_NAME')) define('THEME_NAME', 'Adams');
-if (!defined('THEME_DB_VERSION')) define('THEME_DB_VERSION', 'v1.4.19');
+if (!defined('THEME_DB_VERSION')) define('THEME_DB_VERSION', 'v1.4.21');
 if (version_compare($GLOBALS['wp_version'], '4.4-alpha', '<')) {
     wp_die('请升级到4.4以上版本');
 }
@@ -357,7 +357,7 @@ if (!function_exists('biji_ajax_comment_scripts')) :
         wp_localize_script('ajax-comment', 'ajaxcomment', array(
             'ajax_url' => admin_url('admin-ajax.php'),
             'order' => get_option('comment_order'),
-            'formpostion' => 'bottom', //默认为bottom，如果你的表单在顶部则设置为top。
+            'formpostion' => 'after',
         ));
     }
 endif;

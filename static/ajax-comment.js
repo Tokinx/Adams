@@ -1,14 +1,15 @@
 (function ($) {
     $(document).ready(function () {
         $('.infos .donate,.infos .share').unbind("click").click(function () {
-            if ($(this).attr('class') == 'donate') {
-                $('.infos').removeClass('share-close');
-                $('.infos').toggleClass('donate-close');
+            let el = $('.infos');
+            if ($(this).attr('class') === 'donate') {
+                el.removeClass('share-close');
+                el.toggleClass('donate-close');
             } else {
-                $('.infos').removeClass('donate-close');
-                $('.infos').toggleClass('share-close');
-                if ($(this).find('img').length == 0) {
-                    $(this).append('<div class="qrcode"><img src="' + $(this).find('a').data('qrcode') + '" /> <i>移动设备上继续阅读</i></div>');
+                el.removeClass('donate-close');
+                el.toggleClass('share-close');
+                if ($(this).find('img').length === 0) {
+                    $(this).append('<div class="qrcode"><img src="' + $(this).find('a').data('qrcode') + '" alt="" /> <i>移动设备上继续阅读</i></div>');
                 }
             }
         });
@@ -40,7 +41,7 @@
         var __cancel = $('#cancel-comment-reply-link'),
             __cancel_text = __cancel.text(),
             __list = 'commentlist';//your comment wrapprer
-        $(document).off().on("submit", "#commentform", function () {
+        $("#commentform").off().on("submit", function () {
             $.ajax({
                 url: ajaxcomment.ajax_url,
                 data: $(this).serialize() + "&action=ajax_comment",
@@ -54,32 +55,33 @@
                     $('textarea').each(function () {
                         this.value = ''
                     });
-                    var t = bijiAjax,
+                    let t = bijiAjax,
                         cancel = t.I('cancel-comment-reply-link'),
                         temp = t.I('wp-temp-form-div'),
                         respond = t.I(t.respondId),
                         post = t.I('comment_post_ID').value,
-                        parent = t.I('comment_parent').value;
-                    if (parent != '0') {
+                        parent = parseInt(t.I('comment_parent').value);
+
+                    if (parent !== 0) {
                         $('#respond').before('<ol class="children">' + data + '</ol>');
                     } else if (!$('.' + __list).length) {
-                        if (ajaxcomment.formpostion == 'bottom') {
-                            $('#respond').before('<ol class="' + __list + '">' + data + '</ol>');
-                        } else {
+                        if (ajaxcomment.formpostion === 'after') {
                             $('#respond').after('<ol class="' + __list + '">' + data + '</ol>');
+                        } else {
+                            $('#respond').before('<ol class="' + __list + '">' + data + '</ol>');
                         }
 
                     } else {
-                        if (ajaxcomment.order == 'asc') {
+                        if (ajaxcomment.order === 'asc') {
                             $('.' + __list).append(data);
                         } else {
                             $('.' + __list).prepend(data);
                         }
                     }
-                    t.createButterbar("提交成功");
+                    t.createButterbar("Submitted successfully.");
                     cancel.style.display = 'none';
                     cancel.onclick = null;
-                    t.I('comment_parent').value = '0';
+                    t.I('comment_parent').value = 0;
                     if (temp && respond) {
                         temp.parentNode.insertBefore(respond, temp);
                         temp.parentNode.removeChild(temp)
@@ -94,8 +96,9 @@
                 return document.getElementById(e);
             },
             clearButterbar: function (e) {
-                if ($(".butterBar").length > 0) {
-                    $(".butterBar").remove();
+                let bar = $(".butterBar");
+                if (bar.length > 0) {
+                    bar.remove();
                 }
             },
             createButterbar: function (message) {
