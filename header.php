@@ -77,17 +77,16 @@
                         </div>
                     </div>
                     <div class="share">
-                        <a href="javascript:;"
-                           data-qrcode="//api.qrserver.com/v1/create-qr-code/?size=150x150&margin=10&data=<?php the_permalink(); ?>"><i
-                                    class="czs-scan-l s"></i><i class="czs-qrcode-l h"></i> 码</a>
+                        <a href="javascript:void(0);"
+                           data-qrcode="//api.qrserver.com/v1/create-qr-code/?size=150x150&margin=10&data=<?php the_permalink(); ?>">
+                            <i class="czs-scan-l s"></i><i class="czs-qrcode-l h"></i> 码</a>
                     </div>
                 </div>
-            <?php } else {
-                $placard = get_theme_mod('biji_setting_placard'); ?>
+            <?php } else { ?>
                 <h2 class="fixed-title"></h2>
                 <div class="fixed-menus"></div>
                 <div class="placard">
-                    <?php echo $placard == '' ? '简单传递美好' : $placard; ?>
+                    <?= get_theme_mod('biji_setting_placard'); ?>
                 </div>
             <?php } ?>
         </div>
