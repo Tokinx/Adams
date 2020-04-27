@@ -156,6 +156,11 @@ sup {
 .post-list .reade_more .page-numbers,.post-list .reade_more .page-numbers:hover,.post-list .reade_more span.page-numbers{display:inline-block;border-radius:2px;background:#fff;margin:0 .6%;padding:1% 2.6%;}
 .post-list .reade_more .page-numbers:hover,.post-list .reade_more span.page-numbers{background:#3274ff;}
 
+.post-password-form [name="post_password"]{box-shadow: 0 0 0 1px rgba(189, 202, 219, 0.2) inset;padding:0 10px;}
+.post-password-form [name="post_password"]:focus{box-shadow: 0 0 0 1px #3274ff inset;}
+.post-password-form [name="Submit"]{width:80px;cursor:pointer;background-color:#3274ff;color:#fff;}
+.post-password-form [name="Submit"]:hover{background-color:#5c91ff;}
+
 /* Connent */
 .post_article img {max-width:100%;display:block;margin:auto;height:auto;}
 .post_article embed {max-width:100%;margin:10px auto;display:block;}
@@ -400,6 +405,7 @@ ul.links li:hover .bg{opacity:.32}
     .main-load .post-list .meta:nth-child(9){-webkit-animation-delay:.16s;animation-delay:.16s;}
     .main-load .post-list .meta:nth-child(10){-webkit-animation-delay:.18s;animation-delay:.18s;}
 }
+
 
 /* Light mode */
 @media (prefers-color-scheme: light) {

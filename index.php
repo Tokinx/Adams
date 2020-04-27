@@ -16,7 +16,11 @@
                                    style="background-image: url('<?php echo post_thumbnail(200, 140); ?>');"></a>
                             <?php }; ?>
                             <p itemprop="articleBody">
-                                <?php echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_excerpt ?: $post->post_content))), 0, 220, '...'); ?>
+                                <?php if (post_password_required()) {
+                                    the_content();
+                                } else {
+                                    echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_excerpt ?: $post->post_content))), 0, 220, '...');
+                                } ?>
                             </p>
                         </main>
                         <footer>
