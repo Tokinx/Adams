@@ -10,6 +10,7 @@ get_header(); ?>
                 $query = "SELECT COUNT(comment_ID) AS cnt, comment_author, comment_author_url, comment_author_email FROM (SELECT * FROM $wpdb->comments LEFT OUTER JOIN $wpdb->posts ON ($wpdb->posts.ID=$wpdb->comments.comment_post_ID) WHERE comment_date > date_sub( NOW(), INTERVAL 1 MONTH ) AND user_id='0' AND post_password='' AND comment_approved='1' AND comment_type='') AS tempcmt GROUP BY comment_author_email ORDER BY cnt DESC LIMIT 24";
                 $wall = $wpdb->get_results($query);
                 $maxNum = $wall[0]->cnt;
+                $output = "";
                 foreach ($wall as $comment) {
                     if ($comment->comment_author_url)
                         $url = $comment->comment_author_url;
@@ -28,6 +29,8 @@ get_header(); ?>
         </div>
     </section>
 <?php
-include("comments.php");
+if ( comments_open() || get_comments_number() ) :
+    comments_template();
+endif;
 get_footer();
 ?>

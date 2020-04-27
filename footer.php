@@ -53,7 +53,6 @@
         <?php } ?>
         $.extend({
             adamsOverload: function () {
-                $('.navigation:eq(0)').remove();
                 $(".post_article a").attr("rel", "external");
                 $("a[rel='external']:not([href^='#']),a[rel='external nofollow']:not([href^='#'])").attr("target", "_blank");
                 $("a.vi,.gallery a,.attachment a").attr("rel", "");
@@ -72,7 +71,7 @@
                 <?php }?>
 
                 $('ul.links li a').each(function () {
-                    if ($(this).parent().find('.bg').length == 0) {
+                    if ($(this).parent().find('.bg').length === 0) {
                         $(this).parent().append('<div class="bg" style="background-image:url(https://www.google.com/s2/favicons?domain=' + $(this).attr("href") + ')"></div>')
                     }
                 });

@@ -59,7 +59,7 @@ var _let = [];
         $("body").removeClass().addClass(localStorage.adams_color_style || "").addClass(localStorage.adams_font_style || "");
     });
 
-    $(document).on('click', '.navigation a', function (e) {
+    $(document).on('click', '.comment-navigation a', function (e) {
         e.preventDefault();
         if (history.pushState) {
             history.pushState(null, this.title, this.href);
@@ -68,16 +68,16 @@ var _let = [];
             type: "GET",
             url: this.href,
             beforeSend: function () {
-                $('html, body').animate({ scrollTop: $('#comments').offset().top - 20 }, 0);
-                $('.navigation').remove();
-                $('.commentlist').remove();
+                $('html, body').animate({ scrollTop: $('#comments').offset().top - 80 }, 0);
+                $('.comment-navigation').remove();
+                $('.comment-list').remove();
             },
             dataType: "html",
             success: function (out) {
-                result = $(out).find('.commentlist');
-                nextlink = $(out).find('.navigation');
+                let result = $(out).find('.comment-list');
+                let nextlink = $(out).find('.comment-navigation');
                 $('#comments').after(result);
-                $('.commentlist').after(nextlink);
+                $('.comment-list').after(nextlink);
                 $.adamsOverload();
             }
         });

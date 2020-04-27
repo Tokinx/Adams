@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.4.25
+	Version: 1.4.26
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -167,11 +167,11 @@ sup {
 .post_article a {text-decoration: underline;}
 .post_article p {margin: 3% 0;line-height: 2rem;}
 .post_article p a,.post_article p a span{padding:0;color:#3274ff;}
-.post_article h1,.post_article h2,.post_article h3,.post_article h4,#comments{margin: 2rem 0;font-weight:bold;position:relative;}
+.post_article h1,.post_article h2,.post_article h3,.post_article h4{margin: 1rem 0 0 0;padding:0 3px 1px;font-weight:bold;position:relative;display:inline-block;background: linear-gradient(to bottom,transparent 56%, rgba(189, 202, 219, 0.3) 0%) no-repeat;}
 .post_article h1 {font-size:1.8rem;line-height:1.8rem;}
 .post_article h2 {font-size:1.6rem;line-height:1.6rem;}
 .post_article h3 {font-size:1.4rem;line-height:1.4rem;}
-.post_article h4,#comments {font-size:1.2rem;line-height:1.2rem;}
+.post_article h4 {font-size:1.2rem;line-height:1.2rem;}
 .post_article hr {border:0;display:block;margin: 5% 0;position:relative;text-align:center;letter-spacing: 2rem;}
 .post_article hr:before{content: '...';display: inline-block;position: relative;top: -.5rem;left:.8rem;font-size: 2rem;}
 .post_article ol,.post_article ul {margin:10px 0;padding:10px 40px;background:#fafafa;line-height:38px;}
@@ -205,7 +205,7 @@ sup {
 .gallery .gallery-item img{position:absolute;top: 0;left: 0;height:100%;width:100%;object-fit:cover;border:0!important;}
 
 /* Comments */
-.nocomments{display:none;}
+.no-comments{margin: 4rem 0;text-align: center;}
 .comment,.pingback {z-index:1;}
 .comment.depth-1{margin:1% 0 1% 0;padding:0 0 1%;}
 .comment.depth-1 .depth-1{padding:0;border:0;}
@@ -281,8 +281,9 @@ sup {
 
 /* Navigat */
 .navigation {text-align:center;overflow:hidden;margin:3% 0;}
-.navigation a{font-size:.8rem;margin:0 10px;}
-.navigation li{float:none;display:inline-block;margin:0;}
+.navigation .screen-reader-text{display:none;}
+.navigation .nav-links,.navigation .nav-links div{display:flex;justify-content: space-between;}
+.navigation a{display:inline-block;font-size:.8rem;border:1px solid currentColor;padding:6px 12px;border-radius:2px;}
 
 .nearbypost{letter-spacing:-.8rem;padding:1rem 0;margin:0 0 7%;font-size:.96rem;box-shadow:0 1px 0 #E6E9ED,0 -1px 0 #E6E9ED;/* overflow: hidden; */}
 .nearbypost div{float:none;margin:auto;display:inline-block;width:50%;letter-spacing:.06rem;line-height:1.08rem;position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}

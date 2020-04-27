@@ -40,7 +40,7 @@
     $(document).ready(function () {
         var __cancel = $('#cancel-comment-reply-link'),
             __cancel_text = __cancel.text(),
-            __list = 'commentlist';//your comment wrapprer
+            __list = 'comment-list';//your comment wrapprer
         $("#commentform").off().on("submit", function () {
             $.ajax({
                 url: ajaxcomment.ajax_url,
@@ -79,6 +79,7 @@
                         }
                     }
                     t.createButterbar("Submitted successfully.");
+                    $('html, body').animate({scrollTop: $('#comments').offset().top - 80}, 0);
                     cancel.style.display = 'none';
                     cancel.onclick = null;
                     t.I('comment_parent').value = 0;

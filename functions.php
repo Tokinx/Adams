@@ -6,9 +6,9 @@
  * @subpackage Adams
  */
 if (!defined('THEME_NAME')) define('THEME_NAME', 'Adams');
-if (!defined('THEME_DB_VERSION')) define('THEME_DB_VERSION', 'v1.4.25');
+if (!defined('THEME_DB_VERSION')) define('THEME_DB_VERSION', 'v1.4.26');
 if (version_compare($GLOBALS['wp_version'], '4.4-alpha', '<')) {
-    wp_die('请升级到4.4以上版本');
+    wp_die('Please upgrade to version 4.4 or higher');
 }
 
 require(get_template_directory() . '/inc/core.de.php');
@@ -74,8 +74,6 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 remove_filter('the_content_feed', 'wp_staticize_emoji');
 remove_filter('comment_text_rss', 'wp_staticize_emoji');
 remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
-add_filter('login_errors', create_function('$a', "return null;")); //取消登录错误提示
-// add_filter( 'show_admin_bar', '__return_false' ); //删除AdminBar
 if (function_exists('add_theme_support')) add_theme_support('post-thumbnails'); //添加特色缩略图支持
 
 // 禁止wp-embed.min.js
