@@ -28,6 +28,6 @@ get_header(); ?>
         </div>
     </section>
 <?php
-include("comment.php");
+include("comments.php");
 get_footer();
 ?>
