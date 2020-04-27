@@ -7,11 +7,17 @@
                 'depth' => 0
             )
         ); ?>
-        <p>
-            <span class='left'><?php echo '&copy; ' . date('Y') . ' <a href="' . get_bloginfo('url') . '">' . get_bloginfo('name') . '</a>';
-                if (get_option('zh_cn_l10n_icp_num')) echo " . " . get_option('zh_cn_l10n_icp_num'); ?></span>
-            <span class='right'>Theme by <a href="https://biji.io" target="_blank">Adams</a></span>
-        </p>
+        <div style="display: flex;justify-content: space-between;">
+            <div class='left'>
+                <span>&copy; <?= date('Y') ?> <a href="<?= get_bloginfo('url') ?>"><?= get_bloginfo('name') ?></a></span>
+                <?php if (get_option('zh_cn_l10n_icp_num')) { ?>
+                    <span> . <a href="http://www.beian.miit.gov.cn" target="_blank"><?= get_option('zh_cn_l10n_icp_num') ?></a></span>
+                <?php } ?>
+            </div>
+            <div class='right'>
+                <span>Theme by <a href="https://biji.io" target="_blank">Adams</a></span>
+            </div>
+        </div>
     </section>
 </footer>
 
@@ -61,9 +67,9 @@
                 $.lately({
                     'target': '.commentmetadata a,.infos time,.post-list time'
                 });
-                <?php }?>
-
+                <?php } if(!get_theme_mod('biji_setting_prettify')){ ?>
                 prettyPrint();
+                <?php }?>
 
                 $('ul.links li a').each(function () {
                     if ($(this).parent().find('.bg').length == 0) {
@@ -96,6 +102,13 @@
             // support google analytics
             if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
         }
+        <?php if(!get_theme_mod('biji_setting_placard')){ ?>
+        if ($('.placard').length) {
+            $.get("https://v1.hitokoto.cn?encode=text", (tetx) => {
+                $('.placard').text(tetx);
+            });
+        }
+        <?php }?>
     });
     InstantClick.on('wait', function () {
         // pjax href click

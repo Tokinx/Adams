@@ -63,6 +63,9 @@ function theme_customize_register($wp_customize)
     $wp_customize->add_setting('biji_setting_viewimage', array(
         'default' => '',
     ));
+    $wp_customize->add_setting('biji_setting_prettify', array(
+        'default' => '',
+    ));
     $wp_customize->add_setting('biji_setting_lately', array(
         'default' => '',
     ));
@@ -103,6 +106,11 @@ function theme_customize_register($wp_customize)
     ));
     $wp_customize->add_control('biji_setting_viewimage', array(
         'label' => '关闭默认灯箱',
+        'section' => 'biji_setting',
+        'type' => 'checkbox'
+    ));
+    $wp_customize->add_control('biji_setting_prettify', array(
+        'label' => '关闭默认代码高亮',
         'section' => 'biji_setting',
         'type' => 'checkbox'
     ));

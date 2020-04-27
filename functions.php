@@ -45,12 +45,14 @@ function biji_enqueue_scripts()
             'url' => admin_url('admin-ajax.php')
         )
     );
-    wp_enqueue_script(
-        'prettify',
-        '//cdn.staticfile.org/prettify/r298/prettify.js',
-        array(),
-        THEME_DB_VERSION
-    );
+    if(!get_theme_mod('biji_setting_prettify')) {
+        wp_enqueue_script(
+            'prettify',
+            '//cdn.staticfile.org/prettify/r298/prettify.js',
+            array(),
+            THEME_DB_VERSION
+        );
+    }
     wp_enqueue_script(
         'instantclick',
         '//cdn.staticfile.org/instantclick/3.0.1/instantclick.min.js',
@@ -161,30 +163,31 @@ function enable_more_buttons($buttons)
 
 add_filter("mce_buttons_3", "enable_more_buttons");
 
+if(!get_theme_mod('biji_setting_prettify')) {
 // 代码高亮
-function dangopress_esc_html($content)
-{
-    if (!is_feed() || !is_robots()) {
-        $content = preg_replace('/<code(.*)>/i', "<code class=\"prettyprint\" \$1>", $content);
+    function dangopress_esc_html($content)
+    {
+        if (!is_feed() || !is_robots()) {
+            $content = preg_replace('/<code(.*)>/i', "<code class=\"prettyprint\" \$1>", $content);
+        }
+        $regex = '/(<code.*?>)(.*?)(<\/code>)/sim';
+        return preg_replace_callback($regex, 'dangopress_esc_callback', $content);
     }
-    $regex = '/(<code.*?>)(.*?)(<\/code>)/sim';
-    return preg_replace_callback($regex, 'dangopress_esc_callback', $content);
+
+    function dangopress_esc_callback($matches)
+    {
+        $tag_open = $matches[1];
+        $content = $matches[2];
+        $tag_close = $matches[3];
+        //$content = htmlspecialchars($content, ENT_NOQUOTES, get_bloginfo('charset'));
+        $content = esc_html($content);
+
+        return $tag_open . $content . $tag_close;
+    }
+
+    add_filter('the_content', 'dangopress_esc_html', 2);
+    add_filter('comment_text', 'dangopress_esc_html', 2);
 }
-
-function dangopress_esc_callback($matches)
-{
-    $tag_open = $matches[1];
-    $content = $matches[2];
-    $tag_close = $matches[3];
-    //$content = htmlspecialchars($content, ENT_NOQUOTES, get_bloginfo('charset'));
-    $content = esc_html($content);
-
-    return $tag_open . $content . $tag_close;
-}
-
-add_filter('the_content', 'dangopress_esc_html', 2);
-add_filter('comment_text', 'dangopress_esc_html', 2);
-
 // 评论@回复
 function idevs_comment_add_at($comment_text, $comment = '')
 {
