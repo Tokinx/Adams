@@ -1,5 +1,5 @@
 <?php
 get_header();
 include("inc/content.php");
-include("comment.php");
+include("comments.php");
 get_footer();
