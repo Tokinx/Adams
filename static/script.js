@@ -1,9 +1,10 @@
 var _let = [];
 /**
- * ViewImage.js
- * https://tokinx.github.io/view-image
+ * ViewImage.min.js 1.3.1
+ * https://tokinx.github.io/ViewImage/
  */
-!function (a) { a.extend({ viewImage: function (b) { var c = a.extend({ target: ".view-image img", exclude: "", delay: 300 }, b); a(c.exclude).attr("view-image", !1), a(c.target).click(function () { var b = a(this).attr("src"), d = a(this).attr("href"), e = "", f = "<style class='view-image-css'>.view-img{position:fixed;background:#fff;background:rgba(255,255,255,.92);width:100%;height:100%;top:0;left:0;text-align:center;padding:2%;z-index:999;cursor: zoom-out}.view-img img,.view-img span{max-width:100%;max-height:100%;position:relative;top:50%;transform: translateY(-50%);}.view-img img{animation:view-img-show .8s -0.1s ease-in-out}.view-img span{height:2em;color:#AAB2BD;overflow:hidden;position:absolute;top:50%;left:0;right:0;width:120px;text-align:center;margin:-1em auto;}.view-img span:after{content:'';position:absolute;bottom:0;left:0;transform: translateX(-100%);width:100%;height:2px;background:#3274ff;animation:view-img-load .8s -0.1s ease-in-out infinite;}@keyframes view-img-load{0%{transform: translateX(-100%);}100%{transform: translateX(100%);}}@keyframes view-img-show{0%{opacity:0;}100%{opacity:1;}}</style>"; return a(this).attr("view-image") || a(this).attr("rel") ? void 0 : (e = b ? b : d, a("body").append(f + "<div class='view-img'><span>loading...</span></div>"), setTimeout(function () { var b = new Image; b.src = e, b.onload = function () { a(".view-img").html("<img src=" + this.src + ">") }, a(".view-img").click(function () { a(".view-image-css").remove(), a(this).remove() }) }, c.delay), !1) }) } }) }(jQuery);
+(function(a){a.extend({viewImage:function(c){var b=a.extend({target:".view-image img",exclude:"",delay:300},c);a(b.exclude).attr("view-image",!1);a(b.target).off().on("click",function(e){var f=e.target.src,d=e.target.href,c=".vi-"+Math.random().toString(36).substr(2);if(!a(this).attr("view-image")&&!a(this).is(b.exclude)&&(f||d&&d.match(/.+\.(jpg|jpeg|webp|gif|png)/gi)))return a("body").append("<style class='view-image-css'>.view-img{position:fixed;background:#fff;background:rgba(255,255,255,.92);width:100%;height:100%;top:0;left:0;text-align:center;padding:2%;z-index:999;cursor: zoom-out}.view-img img,.view-img span{max-width:100%;max-height:100%;position:relative;top:50%;transform: translateY(-50%);}.view-img img{animation:view-img-show .8s -0.1s ease-in-out}.view-img span{height:2em;color:#AAB2BD;overflow:hidden;position:absolute;top:50%;left:0;right:0;width:120px;text-align:center;margin:-1em auto;}.view-img span:after{content:'';position:absolute;bottom:0;left:0;transform: translateX(-100%);width:100%;height:2px;background:#3274ff;animation:view-img-load .8s -0.1s ease-in-out infinite;}@keyframes view-img-load{0%{transform: translateX(-100%);}100%{transform: translateX(100%);}}@keyframes view-img-show{0%{opacity:0;}100%{opacity:1;}}</style><div class='view-img'><span>loading...</span></div>"),
+        setTimeout(function(){var b=new Image;b.src=f||d;b.onload=function(){a(".view-img").html('<img src="'+b.src+'"  alt="ViewImage">')};a(".view-img").off().on("click",function(){a(".view-image-css").remove();a(this).remove()});a(c).html()},b.delay),!1})}})})(jQuery);
 
 /**
  * lately.min.js v1.0.8
@@ -32,7 +33,7 @@ var _let = [];
     });
     $(document).on('click', '.setting_tool a', function (e) {
         if ($(this).is('.back2top')) {
-            return $("html,body").animate({ scrollTop: 0 }, 400);
+            return $("html,body").animate({scrollTop: 0}, 400);
         } else {
             _let.st = $('.setting_tool');
             if ($(this).is('.sosearch') && !_let.st.is('.search')) {
@@ -68,7 +69,7 @@ var _let = [];
             type: "GET",
             url: this.href,
             beforeSend: function () {
-                $('html, body').animate({ scrollTop: $('#comments').offset().top - 80 }, 0);
+                $('html, body').animate({scrollTop: $('#comments').offset().top - 80}, 0);
                 $('.comment-navigation').remove();
                 $('.comment-list').remove();
             },

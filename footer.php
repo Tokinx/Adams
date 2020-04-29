@@ -1,12 +1,6 @@
 <footer class="footer">
     <section class="container">
-        <?php wp_nav_menu(
-            array(
-                'container' => false,
-                'theme_location' => 'footer_nav',
-                'depth' => 0
-            )
-        ); ?>
+        <?php wp_nav_menu(['container' => false, 'theme_location' => 'footer_nav', 'depth' => 0]); ?>
         <div style="display: flex;justify-content: space-between;">
             <div class='left'>
                 <span>&copy; <?= date('Y') ?> <a href="<?= get_bloginfo('url') ?>"><?= get_bloginfo('name') ?></a></span>
@@ -59,8 +53,7 @@
                 <?php if(!get_theme_mod('biji_setting_viewimage')){ ?>
                 $.viewImage({
                     'target': '.gallery a,.gallery img,.attachment a,.post_article img,.post_article a,a.vi',
-                    'exclude': '.readerswall img,.gallery a img,.attachment a img',
-                    'delay': 300
+                    'exclude': '.readerswall img,.gallery a img,.attachment a img'
                 });
                 <?php } if(!get_theme_mod('biji_setting_lately')){ ?>
                 $.lately({
