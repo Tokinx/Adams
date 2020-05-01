@@ -3,33 +3,25 @@
 Template Name: 读者排行
 */
 get_header(); ?>
-    <section class="section content main-load">
-        <div class="container">
-            <article class="post_article readerswall" itemscope itemtype="https://schema.org/Article">
+    <section class="container">
+        <article class="post_article readerswall" itemscope itemtype="https://schema.org/Article">
+            <ul>
                 <?php
-                $query = "SELECT COUNT(comment_ID) AS cnt, comment_author, comment_author_url, comment_author_email FROM (SELECT * FROM $wpdb->comments LEFT OUTER JOIN $wpdb->posts ON ($wpdb->posts.ID=$wpdb->comments.comment_post_ID) WHERE comment_date > date_sub( NOW(), INTERVAL 1 MONTH ) AND user_id='0' AND post_password='' AND comment_approved='1' AND comment_type='') AS tempcmt GROUP BY comment_author_email ORDER BY cnt DESC LIMIT 24";
-                $wall = $wpdb->get_results($query);
-                $maxNum = $wall[0]->cnt;
-                $output = "";
-                foreach ($wall as $comment) {
-                    if ($comment->comment_author_url)
-                        $url = $comment->comment_author_url;
-                    else $url = "#";
-                    $tmp = "<li>
-                        <a href='" . $url . "' target='_blank' title='" . $comment->comment_author . " (" . $comment->cnt . ")'>" . get_avatar($comment->comment_author_email, 80) . "
-                            <span>" . $comment->comment_author . "<br></span>
+                $query = "SELECT COUNT(comment_ID) AS cnt, comment_author, comment_author_url, comment_author_email FROM (SELECT * FROM $wpdb->comments LEFT OUTER JOIN $wpdb->posts ON ($wpdb->posts.ID=$wpdb->comments.comment_post_ID) WHERE comment_date > date_sub( NOW(), INTERVAL 2 MONTH ) AND user_id='0' AND post_password='' AND comment_approved='1' AND comment_type='') AS tempcmt GROUP BY comment_author_email ORDER BY cnt DESC LIMIT 24";
+                foreach ($wpdb->get_results($query) as $comment) { ?>
+                    <li>
+                        <a href="<?= ($comment->comment_author_url ?: 'javascript:void(0);') ?>" target="_blank"
+                           title="<?= $comment->comment_author ?>（<?= $comment->cnt ?>）">
+                            <?= get_avatar($comment->comment_author_email, 160); ?>
+                            <span><?= $comment->comment_author ?><br></span>
                         </a>
-                    </li>";
-                    $output .= $tmp;
-                }
-                $output = "<ul>" . $output . "</ul>";
-                echo $output;
-                ?>
-            </article>
-        </div>
+                    </li>
+                <?php } ?>
+            </ul>
+        </article>
     </section>
 <?php
-if ( comments_open() || get_comments_number() ) :
+if (comments_open() || get_comments_number()) :
     comments_template();
 endif;
 get_footer();
