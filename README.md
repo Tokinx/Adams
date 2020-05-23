@@ -19,7 +19,7 @@ Github 默认为开发版，如果需要稳定发行版，请前往：https://gi
 
 维护：[Tokin](https://biji.io)
 
-贡献：[@Frank](https://github.com/w4o)、[@Abdul Wahab](https://github.com/abdulwahab610)、[@Sammy Liang](https://github.com/SammyLiang97)、[@刘明野](https://github.com/liumingye)、[@lizhimiao](https://github.com/zhimiaoli)
+贡献：[@Frank](https://github.com/w4o)、[@Abdul Wahab](https://github.com/abdulwahab610)、[@Sammy Liang](https://github.com/SammyLiang97)、[@刘明野](https://github.com/liumingye)、[@lizhimiao](https://github.com/zhimiaoli)、[@keinx](https://github.com/keinx)
 
 # 讨论
 
