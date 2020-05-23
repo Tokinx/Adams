@@ -34,7 +34,7 @@
                 <?php endwhile;
             } else { ?>
                 <article class="meta">
-                    <h3 style="font-size: 3em;margin: 0 0 20px;color: #000;">Sorry!</h3>
+                    <h3 style="font-size: 3em;margin: 0 0 20px;">Sorry!</h3>
                     <p>这个页面没有你要找的内容。</p>
                 </article>
             <?php }; ?>
