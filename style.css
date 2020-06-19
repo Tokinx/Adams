@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.4.28
+	Version: 1.4.29
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -276,7 +276,8 @@ sup {
 .pingback .comment-author span{font-size:0;}
 .pingback .comment-author span:before{content:' - Refer to this article：';color:#E6E9ED;font-size:12px;}
 
-.tags{display:flex;margin:5% 0 4%;}
+.tags{display:flex;margin:5% 0 4%;flex-wrap: wrap;}
+.tags li{margin:10px 0;}
 .tags li a{background-color:rgba(136, 136, 136, 0.1);padding:4px 12px;margin-right:10px;border-radius: 15px;font-size:14px;}
 
 /* Navigat */

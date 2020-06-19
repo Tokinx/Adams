@@ -6,7 +6,7 @@
  * @subpackage Adams
  */
 if (!defined('THEME_NAME')) define('THEME_NAME', 'Adams');
-if (!defined('THEME_DB_VERSION')) define('THEME_DB_VERSION', 'v1.4.28');
+if (!defined('THEME_DB_VERSION')) define('THEME_DB_VERSION', 'v1.4.29   ');
 if (version_compare($GLOBALS['wp_version'], '4.4-alpha', '<')) {
     wp_die('Please upgrade to version 4.4 or higher');
 }
