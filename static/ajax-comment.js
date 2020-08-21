@@ -1,5 +1,12 @@
 (function ($) {
     $(document).ready(function () {
+        if(typeof QRCode === "function" && $(".qrcode .img-box").length) {
+            let href = location.href;
+            if($("[rel='shortlink']").length){
+                href = $("[rel='shortlink']").get(0).href;
+            }
+            new QRCode($(".qrcode .img-box").get(0), href);
+        }
         $('.infos .donate,.infos .share').unbind("click").click(function () {
             let el = $('.infos');
             if ($(this).attr('class') === 'donate') {
@@ -8,9 +15,6 @@
             } else {
                 el.removeClass('donate-close');
                 el.toggleClass('share-close');
-                if ($(this).find('img').length === 0) {
-                    $(this).append('<div class="qrcode"><img src="' + $(this).find('a').data('qrcode') + '" alt="" /> <i>移动设备上继续阅读</i></div>');
-                }
             }
         });
     });

@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.4.30
+	Version: 1.5.1
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -130,6 +130,8 @@ sup {
 .infos .share .share-close,.infos.share-close .share .qrcode i{display:block;position:absolute;top:5px;left:0;right:0;}
 .infos.share-close .share a,.infos.donate-close .donate a{box-shadow:0 1px inset;}
 .infos.share-close .share .qrcode i,.infos .donate .window ul li:after{font-size:12px;font-style:normal;background:none;box-shadow:none;top:118px;}
+.infos.share-close .share .qrcode .img-box{width:95%;margin:auto;}
+.infos.share-close .share .qrcode .img-box img{width:100%;}
 .infos .donate .window ul li:after{margin:-8px;}
 .infos.fixed{position:fixed;z-index: 101;top:0;left:0;right:0;box-shadow:0 2px 3px rgba(170, 178, 189, 0.2);transition: 0s;}
 .infos.fixed:before,.infos.fixed:after{display:none;}
@@ -214,7 +216,7 @@ sup {
 .comment-body {padding:15px 0;position:relative;}
 .comment .comment .comment-body,.comment .comment .comment > .comment-body.new-comment {margin: 0 0 0 -16px;}
 .comment-body p,.comment-awaiting-moderation {font-size:.8rem;clear:both;line-height:22px;margin:0 0 0 55px;}
-.comment-body pre{margin:1rem 0 1rem 2rem;}
+.comment-body pre{margin:1rem 0 0 2rem;}
 .comment-body pre code{max-height:14rem;padding:1rem;}
 .comment .comment .comment-body p,.comment-awaiting-moderation {margin:0 0 0 40px;}
 .comment .comment .comment-body img{max-width: 100%;}
