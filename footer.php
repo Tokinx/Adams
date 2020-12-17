@@ -57,7 +57,7 @@
                 });
                 <?php } if(!get_theme_mod('biji_setting_lately')){ ?>
                 Lately({
-                    'target': '.commentmetadata a,.infos time,.post-list time'
+                    'target': '.commentmetadata a:first-child,.infos time,.post-list time'
                 });
                 <?php } if(!get_theme_mod('biji_setting_prettify')){ ?>
                 prettyPrint();

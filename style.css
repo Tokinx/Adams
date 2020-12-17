@@ -5,7 +5,7 @@
 	Description: Simple is beautiful
 	Author: Tokin
 	Author URI: https://biji.io
-	Version: 1.5.3
+	Version: 1.5.4
 */
 /* Reset */
 html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -15,7 +15,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
 body{background: #FFF;font:1rem/1.5  "lucida grande", "lucida sans unicode", lucida, helvetica, "PingFang SC", "Hiragino Sans GB", "STHeiti Light", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
 html,body{overflow-x:hidden;-webkit-overflow-scrolling: touch;-overflow-scrolling: touch;}
-html{/* height:100%; */}
 ol, ul { list-style: none; }
 input,textarea,button {outline:none;-webkit-appearance:none;}
 blockquote,q {quotes:none;}
@@ -27,7 +26,7 @@ blockquote p,q p{margin:0!important;padding:0;line-height:1.8rem;overflow:hidden
 pre{position:relative;white-space:pre-wrap;word-wrap:break-word;}
 code{overflow:auto;font-size:.88rem;max-height: 18rem;border-radius: 3px;background: rgba(152, 152, 152, 0.06);box-shadow: 0 0 0 1px rgba(152, 152, 152, 0.1);}
 code{display:inline-block;margin:-.36rem 0;padding:0 .36rem;color:#AAB2BD;line-height:1.6rem;}
-pre code{display:block;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;padding: 1rem;}
+pre code{display:block;-webkit-overflow-scrolling:touch;padding: 1rem;}
 
 /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
 .prettyprint{font-family:Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace;border:0 !important;}
@@ -105,7 +104,7 @@ sup {
 .infos .dot-good i[class*='-l'],.infos .dot-good i[class*='-l']{display:inline-block;}
 .infos .dot-good.done i{display:inline-block;}
 .infos .dot-good.done i[class*='-l']{display:none;}
-.infos .donate,.infos .donate a{display:inline-block;color:#FC6E51;font-size:14px;float: right;}
+.infos .donate,.infos .donate a{display:block;color:#FC6E51;font-size:14px;float: right;}
 
 .infos .share a i.h,
 .infos .donate a i.h,
