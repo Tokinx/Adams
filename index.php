@@ -19,7 +19,9 @@
                                 <?php if (post_password_required()) {
                                     the_content();
                                 } else {
-                                    echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_excerpt ?: $post->post_content))), 0, 220, '...');
+                                    $content = get_post_field('post_content', get_the_ID());
+									$content_parts = get_extended($content);
+                                    echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_excerpt ?: $content_parts['main']))), 0, 220, '...');
                                 } ?>
                             </p>
                         </main>
