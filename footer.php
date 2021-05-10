@@ -5,7 +5,7 @@
             <div class='left'>
                 <span>&copy; <?= date('Y') ?> <a href="<?= get_bloginfo('url') ?>"><?= get_bloginfo('name') ?></a></span>
                 <?php if (get_option('zh_cn_l10n_icp_num')) { ?>
-                    <span> . <a href="http://www.beian.miit.gov.cn" target="_blank"><?= get_option('zh_cn_l10n_icp_num') ?></a></span>
+                    <span> . <a href="https://beian.miit.gov.cn/" target="_blank"><?= get_option('zh_cn_l10n_icp_num') ?></a></span>
                 <?php } ?>
             </div>
             <div class='right'>
