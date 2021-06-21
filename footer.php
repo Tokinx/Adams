@@ -75,6 +75,13 @@
                         img.outerHTML = img.outerHTML;
                     });
                 }
+                <?php if(!get_theme_mod('biji_setting_placard')){ ?>
+                if ($('.placard').length) {
+                    $.get("https://v1.hitokoto.cn", (data) => {
+                        $('.placard').text(data.hitokoto);
+                    });
+                }
+                <?php }?>
             }
         });
     })(jQuery);
@@ -94,13 +101,6 @@
             // support google analytics
             if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
         }
-        <?php if(!get_theme_mod('biji_setting_placard')){ ?>
-        if ($('.placard').length) {
-            $.get("https://v1.hitokoto.cn", (data) => {
-                $('.placard').text(data.hitokoto);
-            });
-        }
-        <?php }?>
     });
     InstantClick.on('wait', function () {
         // pjax href click
