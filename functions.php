@@ -185,7 +185,7 @@ if(!get_theme_mod('biji_setting_prettify')) {
         $tag_open = $matches[1];
         $content = $matches[2];
         $tag_close = $matches[3];
-        //$content = htmlspecialchars($content, ENT_NOQUOTES, get_bloginfo('charset'));
+        //$content = htmlspecialchars($content, ENT_NOQUOTES, bloginfo('charset'));
         $content = esc_html($content);
 
         return $tag_open . $content . $tag_close;
@@ -339,7 +339,7 @@ function biji_404_template($template)
                         <td>
                             <h1>404</h1>
                             <h3>大事不妙啦！</h3>
-                            <p>你访问的页面好像不小心被博主给弄丢了~<br/><a href="<?php bloginfo('siteurl'); ?>">惩罚博主 ></a></p>
+                            <p>你访问的页面好像不小心被博主给弄丢了~<br/><a href="<?php bloginfo('url'); ?>">惩罚博主 ></a></p>
                         </td>
                     </tr>
                 </table>
