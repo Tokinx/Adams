@@ -5,7 +5,7 @@
             <div class='left'>
                 <span>&copy; <?= date('Y') ?> <a href="<?= get_bloginfo('url') ?>"><?= get_bloginfo('name') ?></a></span>
                 <?php if (get_option('zh_cn_l10n_icp_num')) { ?>
-                    <span> . <a href="http://www.beian.miit.gov.cn" target="_blank"><?= get_option('zh_cn_l10n_icp_num') ?></a></span>
+                    <span> . <a href="https://beian.miit.gov.cn/" target="_blank"><?= get_option('zh_cn_l10n_icp_num') ?></a></span>
                 <?php } ?>
             </div>
             <div class='right'>
@@ -76,6 +76,13 @@
                         img.outerHTML = img.outerHTML;
                     });
                 }
+                <?php if(!get_theme_mod('biji_setting_placard')){ ?>
+                if ($('.placard').length) {
+                    $.get("https://v1.hitokoto.cn", (data) => {
+                        $('.placard').text(data.hitokoto);
+                    });
+                }
+                <?php }?>
             }
         });
     })(jQuery);
@@ -98,13 +105,6 @@
             // support google analytics
             if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
         }
-        <?php if(!get_theme_mod('biji_setting_placard')){ ?>
-        if ($('.placard').length) {
-            $.get("https://v1.hitokoto.cn", (data) => {
-                $('.placard').text(data.hitokoto);
-            });
-        }
-        <?php }?>
     });
     InstantClick.on('wait', function () {
         // pjax href click
