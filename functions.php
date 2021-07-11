@@ -174,7 +174,7 @@ if(!get_theme_mod('biji_setting_prettify')) {
     function dangopress_esc_html($content)
     {
         if (!is_feed() || !is_robots()) {
-            $content = preg_replace('/<code(.*)>/i', "<code class=\"prettyprint\" \$1>", $content);
+            $content = preg_replace('/<code(.*?)>/i', "<code class=\"prettyprint\" \$1>", $content);
         }
         $regex = '/(<code.*?>)(.*?)(<\/code>)/sim';
         return preg_replace_callback($regex, 'dangopress_esc_callback', $content);
