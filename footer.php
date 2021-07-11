@@ -60,7 +60,6 @@
                     'target': '.commentmetadata a:first-child,.infos time,.post-list time'
                 });
                 <?php } if(!get_theme_mod('biji_setting_prettify')){ ?>
-                document.querySelectorAll('p code').forEach(it => it.classList.add('prettyprint'));
                 prettyPrint();
                 <?php }?>
 
@@ -96,10 +95,7 @@
             // support MathJax
             if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             // support google code prettify
-            if (typeof prettyPrint !== 'undefined') {
-                document.querySelectorAll('p code').forEach(it => it.classList.add('prettyprint'));
-                prettyPrint();
-            }
+            if (typeof prettyPrint !== 'undefined') prettyPrint();
             // support 百度统计
             if (typeof _hmt !== 'undefined') _hmt.push(['_trackPageview', location.pathname + location.search]);
             // support google analytics
