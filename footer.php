@@ -41,7 +41,7 @@
 
 <?php wp_footer(); ?>
 <script data-no-instant>
-    (function ($) {
+    (function () {
         <?php if ( is_user_logged_in() ) { ?>
         $('#wpadminbar').attr('data-no-instant', '')
         <?php } ?>
@@ -84,13 +84,13 @@
                 <?php }?>
             }
         });
-    })(jQuery);
+    })();
     <?php if (get_theme_mod('biji_setting_footInfo')) {
         echo get_theme_mod('biji_setting_footInfo') . "\n";
     }
     if(!get_theme_mod('biji_setting_pjax')){ ?>
     InstantClick.on('change', function (isInitialLoad) {
-        jQuery.adamsOverload();
+        $.adamsOverload();
         if (isInitialLoad === false) {
             // support MathJax
             if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
