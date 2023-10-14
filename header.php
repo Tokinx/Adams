@@ -58,6 +58,7 @@
                 <div class="fields">
                     <span><i class="czs-time-l"></i> <time datetime="<?php echo get_the_time('c'); ?>" title="<?php echo get_the_time('c'); ?>"
                                                            itemprop="datePublished" pubdate><?php the_time('Y-m-d') ?></time></span> /
+                    <span><i class="czs-read-l"></i> <?php get_post_views($post -> ID); ?> 阅读</span> /
                     <span><i class="czs-talk-l"></i> <?php comments_number('0', '1', '%'); ?>评</span> /
                     <a href="javascript:;" data-action="topTop" data-id="<?php the_ID(); ?>"
                        class="dot-good <?php echo isset($_COOKIE['dotGood_' . $post->ID]) ? 'done' : ''; ?>">
