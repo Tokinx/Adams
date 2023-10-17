@@ -590,3 +590,51 @@ $mytheme_update_checker = new ThemeUpdateChecker(
 );
 
 // 全部配置完毕
+
+//阅读数量计算  
+function get_post_views ($post_id) {   
+  
+    $count_key = 'views';   
+    $count = get_post_meta($post_id, $count_key, true);   
+  
+    if ($count == '') {   
+        delete_post_meta($post_id, $count_key);   
+        add_post_meta($post_id, $count_key, '0');   
+        $count = '0';   
+    }   
+  
+    echo number_format_i18n($count);   
+  
+}   
+  
+function set_post_views () {   
+  
+    global $post;   
+  
+    $post_id = $post -> ID;   
+    $count_key = 'views';   
+    $count = get_post_meta($post_id, $count_key, true);   
+  
+    if (is_single() || is_page()) {   
+  
+        if ($count == '') {   
+            delete_post_meta($post_id, $count_key);   
+            add_post_meta($post_id, $count_key, '0');   
+        } else {   
+            update_post_meta($post_id, $count_key, $count + 1);   
+        }   
+  
+    }   
+  
+}   
+add_action('get_header', 'set_post_views');  
+
+//字数统计
+function count_words ($text) {
+global $post;
+if ( '' == $text ) {
+   $text = $post->post_content;
+   if (mb_strlen($output, 'UTF-8') < mb_strlen($text, 'UTF-8')) $output .= '本文共' . mb_strlen(preg_replace('/\s/','',html_entity_decode(strip_tags($post->post_content))),'UTF-8') . '个字';
+   return $output;
+}
+}
