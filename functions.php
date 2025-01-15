@@ -6,9 +6,7 @@
  * @subpackage Adams
  */
 if (!defined('THEME_NAME')) define('THEME_NAME', 'Adams');
-if (!defined('THEME_DB_VERSION')) {
-    define('THEME_DB_VERSION', wp_get_theme()->Version);
-}
+if (!defined('THEME_DB_VERSION')) define('THEME_DB_VERSION', 'v1.4.26');
 if (version_compare($GLOBALS['wp_version'], '4.4-alpha', '<')) {
     wp_die('Please upgrade to version 4.4 or higher');
 }
@@ -23,13 +21,7 @@ function biji_enqueue_scripts()
     wp_deregister_script('jquery');
     wp_enqueue_script(
         'jquery-min',
-        '//cdn.staticfile.org/jquery/3.1.1/jquery.min.js',
-        array(),
-        THEME_DB_VERSION
-    );
-    wp_enqueue_script(
-        'qrcode-js',
-        '//cdn.staticfile.org/qrcodejs/1.0.0/qrcode.min.js',
+        '//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js',
         array(),
         THEME_DB_VERSION
     );
@@ -56,14 +48,14 @@ function biji_enqueue_scripts()
     if(!get_theme_mod('biji_setting_prettify')) {
         wp_enqueue_script(
             'prettify',
-            '//cdn.staticfile.org/prettify/r298/prettify.js',
+            '//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prettify/r298/prettify.js',
             array(),
             THEME_DB_VERSION
         );
     }
     wp_enqueue_script(
         'instantclick',
-        '//cdn.staticfile.org/instantclick/3.0.1/instantclick.min.js',
+        '//lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantclick/3.0.1/instantclick.min.js',
         array(),
         THEME_DB_VERSION
     );
@@ -174,7 +166,7 @@ if(!get_theme_mod('biji_setting_prettify')) {
     function dangopress_esc_html($content)
     {
         if (!is_feed() || !is_robots()) {
-            $content = preg_replace('/<code(.*?)>/i', "<code class=\"prettyprint\" \$1>", $content);
+            $content = preg_replace('/<code(.*)>/i', "<code class=\"prettyprint\" \$1>", $content);
         }
         $regex = '/(<code.*?>)(.*?)(<\/code>)/sim';
         return preg_replace_callback($regex, 'dangopress_esc_callback', $content);
@@ -185,7 +177,7 @@ if(!get_theme_mod('biji_setting_prettify')) {
         $tag_open = $matches[1];
         $content = $matches[2];
         $tag_close = $matches[3];
-        //$content = htmlspecialchars($content, ENT_NOQUOTES, bloginfo('charset'));
+        //$content = htmlspecialchars($content, ENT_NOQUOTES, get_bloginfo('charset'));
         $content = esc_html($content);
 
         return $tag_open . $content . $tag_close;
@@ -339,7 +331,7 @@ function biji_404_template($template)
                         <td>
                             <h1>404</h1>
                             <h3>大事不妙啦！</h3>
-                            <p>你访问的页面好像不小心被博主给弄丢了~<br/><a href="<?php bloginfo('url'); ?>">惩罚博主 ></a></p>
+                            <p>你访问的页面好像不小心被博主给弄丢了~<br/><a href="<?php bloginfo('siteurl'); ?>">惩罚博主 ></a></p>
                         </td>
                     </tr>
                 </table>
