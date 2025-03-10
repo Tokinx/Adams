@@ -6,7 +6,9 @@
  * @subpackage Adams
  */
 if (!defined('THEME_NAME')) define('THEME_NAME', 'Adams');
-if (!defined('THEME_DB_VERSION')) define('THEME_DB_VERSION', 'v1.4.26');
+if (!defined('THEME_DB_VERSION')) {
+    define('THEME_DB_VERSION', wp_get_theme()->Version);
+}
 if (version_compare($GLOBALS['wp_version'], '4.4-alpha', '<')) {
     wp_die('Please upgrade to version 4.4 or higher');
 }
@@ -166,7 +168,7 @@ if(!get_theme_mod('biji_setting_prettify')) {
     function dangopress_esc_html($content)
     {
         if (!is_feed() || !is_robots()) {
-            $content = preg_replace('/<code(.*)>/i', "<code class=\"prettyprint\" \$1>", $content);
+            $content = preg_replace('/<code(.*?)>/i', "<code class=\"prettyprint\" \$1>", $content);
         }
         $regex = '/(<code.*?>)(.*?)(<\/code>)/sim';
         return preg_replace_callback($regex, 'dangopress_esc_callback', $content);
@@ -177,7 +179,7 @@ if(!get_theme_mod('biji_setting_prettify')) {
         $tag_open = $matches[1];
         $content = $matches[2];
         $tag_close = $matches[3];
-        //$content = htmlspecialchars($content, ENT_NOQUOTES, get_bloginfo('charset'));
+        //$content = htmlspecialchars($content, ENT_NOQUOTES, bloginfo('charset'));
         $content = esc_html($content);
 
         return $tag_open . $content . $tag_close;
@@ -331,7 +333,7 @@ function biji_404_template($template)
                         <td>
                             <h1>404</h1>
                             <h3>大事不妙啦！</h3>
-                            <p>你访问的页面好像不小心被博主给弄丢了~<br/><a href="<?php bloginfo('siteurl'); ?>">惩罚博主 ></a></p>
+                            <p>你访问的页面好像不小心被博主给弄丢了~<br/><a href="<?php bloginfo('url'); ?>">惩罚博主 ></a></p>
                         </td>
                     </tr>
                 </table>
