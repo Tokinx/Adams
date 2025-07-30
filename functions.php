@@ -23,13 +23,13 @@ function biji_enqueue_scripts()
     wp_deregister_script('jquery');
     wp_enqueue_script(
         'jquery-min',
-        '//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js',
+        '//mirrors.sustech.edu.cn/cdnjs/ajax/libs/jquery/3.7.1/jquery.min.js',
         array(),
         THEME_DB_VERSION
     );
     wp_enqueue_script(
         'qrcode-min',
-        '//lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js',
+        '//mirrors.sustech.edu.cn/cdnjs/ajax/libs/qrcodejs/1.0.0/qrcode.min.js',
         array(),
         THEME_DB_VERSION
     );
@@ -56,14 +56,14 @@ function biji_enqueue_scripts()
     if(!get_theme_mod('biji_setting_prettify')) {
         wp_enqueue_script(
             'prettify',
-            '//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prettify/r298/prettify.js',
+            '//mirrors.sustech.edu.cn/cdnjs/ajax/libs/prettify/r298/prettify.min.js',
             array(),
             THEME_DB_VERSION
         );
     }
     wp_enqueue_script(
         'instantclick',
-        '//lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantclick/3.0.1/instantclick.min.js',
+        '//mirrors.sustech.edu.cn/cdnjs/ajax/libs/instantclick/3.1.0/instantclick.min.js',
         array(),
         THEME_DB_VERSION
     );
