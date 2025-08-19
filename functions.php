@@ -183,6 +183,11 @@ if(!get_theme_mod('biji_setting_prettify')) {
     function dangopress_esc_callback($matches)
     {
         $tag_open = $matches[1];
+        # 前面函数的正则表达式有点粗暴，可能会导致存在多个class，
+        # 所以，如果存在多个就把前面加的class删掉。
+        if ( substr_count($tag_open, "class=") > 1 ){
+            $tag_open = str_replace(' class="prettyprint" ', " ", $tag_open);
+        }
         $content = $matches[2];
         $tag_close = $matches[3];
         //$content = htmlspecialchars($content, ENT_NOQUOTES, bloginfo('charset'));

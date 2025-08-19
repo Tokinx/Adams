@@ -1,6 +1,6 @@
 <!-- Content -->
 <section class="container">
-    <article class="post_article" itemscope itemtype="https://schema.org/Article">
+    <article class="post_article post" itemscope itemtype="https://schema.org/Article">
         <?php if (have_posts()) while (have_posts()) {
             the_post();
             the_content();
